@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f2f2f2;
+  color: #333;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+section {
+  width: 100%;
+  max-width: 500px;
+}
+
+.saldo-total {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.gasto-form {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.gasto-form input,
+.gasto-form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.gasto-form .row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gasto-form .row > div {
+  flex: 1;
+}
+
+.gasto-form button {
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.gasto-form button:hover {
+  background: #74b9ff;
+}
+
+.gasto-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-left: 5px solid #00b894;
+  transition: transform 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.gasto-item[data-autor="mujer"] {
+  border-color: #e84393;
+}
+
+.gasto-item:hover {
+  transform: translateY(-2px);
+  background: #f9f9f9;
+}
+
+.gasto-item .desc {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.gasto-item .meta {
+  font-size: 0.85rem;
+  color: #636e72;
+}
+
+.btn-eliminar {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #b2bec3;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  color: #d63031;
+}
+
+#btn-liquidar-todo {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: #00cec9;
+  color: white;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media(max-width: 600px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .gasto-form .row {
+    flex-direction: column;
+  }
+
+  #btn-liquidar-todo {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}

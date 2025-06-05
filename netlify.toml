@@ -1,0 +1,8 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/registrar-gasto"
+  to = "/.netlify/functions/registrar-gasto"
+  status = 200
