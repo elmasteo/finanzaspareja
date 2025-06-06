@@ -1,9 +1,9 @@
-const { Octokit } = await import("@octokit/rest");
-
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Método no permitido" };
   }
+
+  const { Octokit } = await import("@octokit/rest");
 
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const REPO_OWNER = "elmasteo";
@@ -11,7 +11,7 @@ exports.handler = async (event) => {
   const FILE_PATH = "gastos.json";
   const BRANCH = "master";
 
-  const octokit = new Octokit({ auth: GITHUB_TOKEN });
+  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
   try {
     const nuevoGasto = JSON.parse(event.body);
