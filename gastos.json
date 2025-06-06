@@ -8,6 +8,15 @@
       "tipo": "porcentaje",
       "porcentajeSantiago": 45,
       "porcentajeAdriana": 55
+    },
+    {
+      "id": 1749172807489,
+      "autor": "Adriana",
+      "descripcion": "Mercado",
+      "monto": 20000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55
     }
   ]
 }
