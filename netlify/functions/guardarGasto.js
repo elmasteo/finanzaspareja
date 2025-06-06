@@ -7,9 +7,9 @@ exports.handler = async (event) => {
 
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const REPO_OWNER = "elmasteo";
-  const REPO_NAME = "TU_REPO";
+  const REPO_NAME = "finanzaspareja";
   const FILE_PATH = "public/gastos.json";
-  const BRANCH = "main";
+  const BRANCH = "master";
 
   const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
