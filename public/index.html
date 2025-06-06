@@ -13,6 +13,8 @@
   <h1>Finanzas en Pareja</h1>
 </header>
 
+<button id="modoToggle">🌙 Modo Oscuro</button>
+
 <section class="card">
   <strong>Saldo total:</strong>
   <p id="saldoTexto">Cargando...</p>
@@ -64,6 +66,7 @@
   }
 
   function agregarGasto() {
+
     const autor = document.getElementById("autor").value;
     const descripcion = document.getElementById("descripcion").value.trim();
     const monto = parseFloat(document.getElementById("monto").value);
@@ -131,6 +134,12 @@
     guardarGastos();
     renderGastos();
   }
+    // Modo oscuro toggle
+  const toggle = document.getElementById("modoToggle");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark") ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+  });
 </script>
 </body>
 </html>
