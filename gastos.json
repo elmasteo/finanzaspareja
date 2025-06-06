@@ -1,3 +1,13 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1749173105858,
+      "autor": "Adriana",
+      "descripcion": "Almuerzo crepes",
+      "monto": 76660,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50
+    }
+  ]
 }
