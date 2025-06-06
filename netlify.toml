@@ -3,6 +3,6 @@
   functions = "netlify/functions"
 
 [[redirects]]
-  from = "/registrar-gasto"
-  to = "/.netlify/functions/registrar-gasto"
+  from = "/guardarGasto"
+  to = "/.netlify/functions/guardarGasto"
   status = 200
