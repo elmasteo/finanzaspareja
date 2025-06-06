@@ -1,4 +1,4 @@
-const { Octokit } = require("@octokit/core");
+const { Octokit } = await import("@octokit/rest");
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
