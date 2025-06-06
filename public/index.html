@@ -22,8 +22,8 @@
 
 <section class="card gasto-form">
   <select id="autor">
-    <option value="hombre">Hombre</option>
-    <option value="mujer">Mujer</option>
+    <option value="Santiago">Santiago</option>
+    <option value="Adriana">Adriana</option>
   </select>
   <input type="text" id="descripcion" placeholder="Descripción del gasto" />
   <input type="number" id="monto" placeholder="Monto" step="0.01" />
@@ -33,8 +33,8 @@
     <option value="porcentaje">Porcentaje</option>
   </select>
   <div class="row" id="porcentaje-fields" style="display: none">
-    <div><input type="number" id="porcentaje-hombre" placeholder="% Hombre" max="100" /></div>
-    <div><input type="number" id="porcentaje-mujer" placeholder="% Mujer" max="100" /></div>
+    <div><input type="number" id="porcentaje-Santiago" placeholder="% Santiago" max="100" /></div>
+    <div><input type="number" id="porcentaje-Adriana" placeholder="% Adriana" max="100" /></div>
   </div>
   <button onclick="agregarGasto()">Agregar gasto</button>
 </section>
@@ -74,14 +74,14 @@
 
     if (!descripcion || isNaN(monto) || monto <= 0) return alert("Complete todos los campos correctamente");
 
-    let porcentajeHombre = 50, porcentajeMujer = 50;
+    let porcentajeSantiago = 50, porcentajeAdriana = 50;
     if (tipo === "porcentaje") {
-      porcentajeHombre = parseInt(document.getElementById("porcentaje-hombre").value) || 0;
-      porcentajeMujer = parseInt(document.getElementById("porcentaje-mujer").value) || 0;
-      if (porcentajeHombre + porcentajeMujer !== 100) return alert("Los porcentajes deben sumar 100%");
+      porcentajeSantiago = parseInt(document.getElementById("porcentaje-Santiago").value) || 0;
+      porcentajeAdriana = parseInt(document.getElementById("porcentaje-Adriana").value) || 0;
+      if (porcentajeSantiago + porcentajeAdriana !== 100) return alert("Los porcentajes deben sumar 100%");
     }
 
-    gastos.push({ id: Date.now(), autor, descripcion, monto, tipo, porcentajeHombre, porcentajeMujer });
+    gastos.push({ id: Date.now(), autor, descripcion, monto, tipo, porcentajeSantiago, porcentajeAdriana });
     guardarGastos();
     renderGastos();
   }
@@ -108,23 +108,23 @@
       `;
       cont.appendChild(div);
 
-      const deudor = gasto.autor === "hombre" ? "mujer" : "hombre";
+      const deudor = gasto.autor === "Santiago" ? "Adriana" : "Santiago";
       if (gasto.tipo === "total") {
-        deuda += gasto.autor === "hombre" ? gasto.monto : -gasto.monto;
+        deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
       } else if (gasto.tipo === "mitad") {
         const mitad = gasto.monto / 2;
-        deuda += gasto.autor === "hombre" ? mitad : -mitad;
+        deuda += gasto.autor === "Santiago" ? mitad : -mitad;
       } else if (gasto.tipo === "porcentaje") {
-        const aportado = gasto.autor === "hombre" ? gasto.porcentajeHombre : gasto.porcentajeMujer;
+        const aportado = gasto.autor === "Santiago" ? gasto.porcentajeSantiago : gasto.porcentajeAdriana;
         const deberiaAportar = 50;
         const diferencia = (aportado - deberiaAportar) / 100 * gasto.monto;
-        deuda += gasto.autor === "hombre" ? diferencia : -diferencia;
+        deuda += gasto.autor === "Santiago" ? diferencia : -diferencia;
       }
     }
 
     let texto = "Saldo balanceado";
-    if (deuda > 0.01) texto = `La mujer debe $${deuda} al hombre`;
-    else if (deuda < -0.01) texto = `El hombre debe $${Math.abs(deuda)} a la mujer`;
+    if (deuda > 0.01) texto = `La Adriana debe $${deuda} al Santiago`;
+    else if (deuda < -0.01) texto = `El Santiago debe $${Math.abs(deuda)} a la Adriana`;
     document.getElementById("saldoTexto").textContent = texto;
   }
 
