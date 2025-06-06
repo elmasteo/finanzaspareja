@@ -10,6 +10,15 @@
       "porcentajeAdriana": 55
     },
     [],
-    []
+    [],
+    {
+      "id": 1749172549988,
+      "autor": "Adriana",
+      "descripcion": "Almuerzo",
+      "monto": 20000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55
+    }
   ]
 }
