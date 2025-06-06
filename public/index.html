@@ -123,8 +123,8 @@
     }
 
     let texto = "Saldo balanceado";
-    if (deuda > 0.01) texto = `La Adriana debe $${deuda} al Santiago`;
-    else if (deuda < -0.01) texto = `El Santiago debe $${Math.abs(deuda)} a la Adriana`;
+    if (deuda > 0.01) texto = `Adriana debe $${deuda} a Santiago`;
+    else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
     document.getElementById("saldoTexto").textContent = texto;
   }
 
