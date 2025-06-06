@@ -95,41 +95,41 @@
     renderGastos();
   }
 
-  function renderGastos() {
-    const cont = document.getElementById("gastos-lista");
-    cont.innerHTML = "";
-    let deuda = 0;
+function renderGastos() {
+  const cont = document.getElementById("gastos-lista");
+  cont.innerHTML = "";
+  let deuda = 0;
 
-    for (let gasto of gastos) {
-      const div = document.createElement("div");
-      div.className = "gasto-item";
-      div.setAttribute("data-autor", gasto.autor);
-      div.innerHTML = `
-        <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">&times;</button>
-        <div class="desc">${gasto.descripcion} - $${gasto.monto.toFixed(2)}</div>
-        <div class="meta">Agregado por ${gasto.autor}</div>
-      `;
-      cont.appendChild(div);
+  for (let gasto of gastos) {
+    const div = document.createElement("div");
+    div.className = "gasto-item";
+    div.setAttribute("data-autor", gasto.autor);
+    div.innerHTML = `
+      <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">&times;</button>
+      <div class="desc">${gasto.descripcion} - $${gasto.monto.toFixed(2)}</div>
+      <div class="meta">Agregado por ${gasto.autor}</div>
+    `;
+    cont.appendChild(div);
 
-      const deudor = gasto.autor === "Santiago" ? "Adriana" : "Santiago";
-      if (gasto.tipo === "total") {
-        deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
-      } else if (gasto.tipo === "mitad") {
-        const mitad = gasto.monto / 2;
-        deuda += gasto.autor === "Santiago" ? mitad : -mitad;
-      } else if (gasto.tipo === "porcentaje") {
-        const aportado = gasto.autor === "Santiago" ? gasto.porcentajeSantiago : gasto.porcentajeAdriana;
-        const deberiaAportar = 50;
-        const diferencia = (aportado - deberiaAportar) / 100 * gasto.monto;
-        deuda += gasto.autor === "Santiago" ? diferencia : -diferencia;
-      }
+    if (gasto.tipo === "total") {
+      deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
+    } else if (gasto.tipo === "mitad") {
+      const mitad = gasto.monto / 2;
+      deuda += gasto.autor === "Santiago" ? mitad : -mitad;
+    } else if (gasto.tipo === "porcentaje") {
+      const montoSantiago = (gasto.porcentajeSantiago / 100) * gasto.monto;
+      const montoAdriana = (gasto.porcentajeAdriana / 100) * gasto.monto;
+      const deberAdriana = gasto.autor === "Santiago" ? montoAdriana : -montoSantiago;
+      deuda += deberAdriana;
     }
-
-    let texto = "Saldo balanceado";
-    if (deuda > 0.01) texto = `Adriana debe $${deuda} a Santiago`;
-    else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
-    document.getElementById("saldoTexto").textContent = texto;
   }
+
+  let texto = "Saldo balanceado";
+  if (deuda > 0.01) texto = `Adriana debe $${deuda.toFixed(2)} a Santiago`;
+  else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda).toFixed(2)} a Adriana`;
+  document.getElementById("saldoTexto").textContent = texto;
+}
+
 
   function liquidarDeudas() {
     if (!confirm("¿Seguro que deseas eliminar todos los gastos?")) return;
@@ -137,7 +137,8 @@
     guardarGastos();
     renderGastos();
   }
-  function guardarGastoIndividual(gasto) {
+  
+function guardarGastoIndividual(gasto) {
   fetch('/.netlify/functions/guardarGasto', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -147,6 +148,7 @@
       if (!data.success) console.error("Error guardando gasto:", data.error);
     });
 }
+
 
     // Modo oscuro toggle
   const toggle = document.getElementById("modoToggle");

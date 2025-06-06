@@ -11,11 +11,10 @@ exports.handler = async (event) => {
   const FILE_PATH = "gastos.json";
   const BRANCH = "master";
 
-  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+  const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
   try {
-    const nuevoGasto = JSON.parse(event.body);
-    nuevoGasto.id = Date.now();
+    const body = JSON.parse(event.body);
 
     // Obtener contenido actual del archivo
     const { data: fileData } = await octokit.request(
@@ -24,8 +23,16 @@ exports.handler = async (event) => {
     );
 
     const contenido = Buffer.from(fileData.content, "base64").toString("utf8");
-    const json = JSON.parse(contenido);
-    json.gastos.push(nuevoGasto);
+    let json = JSON.parse(contenido);
+
+    // Si se manda un array, es reemplazo completo (liquidar o eliminar)
+    if (Array.isArray(body)) {
+      json.gastos = body;
+    } else {
+      // Si es solo un gasto nuevo, agregarlo
+      const nuevoGasto = { ...body, id: Date.now() };
+      json.gastos.push(nuevoGasto);
+    }
 
     const nuevoContenido = Buffer.from(JSON.stringify(json, null, 2)).toString("base64");
 
@@ -35,16 +42,16 @@ exports.handler = async (event) => {
         owner: REPO_OWNER,
         repo: REPO_NAME,
         path: FILE_PATH,
-        message: `Agregar gasto ${nuevoGasto.id}`,
+        message: "Actualizar gastos",
         content: nuevoContenido,
         sha: fileData.sha,
-        branch: BRANCH
+        branch: BRANCH,
       }
     );
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, gasto: nuevoGasto })
+      body: JSON.stringify({ success: true })
     };
   } catch (error) {
     return {
