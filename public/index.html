@@ -81,8 +81,10 @@
       if (porcentajeSantiago + porcentajeAdriana !== 100) return alert("Los porcentajes deben sumar 100%");
     }
 
-    gastos.push({ id: Date.now(), autor, descripcion, monto, tipo, porcentajeSantiago, porcentajeAdriana });
-    guardarGastos();
+    const nuevoGasto = { id: Date.now(), autor, descripcion, monto, tipo, porcentajeSantiago, porcentajeAdriana };
+    gastos.push(nuevoGasto);
+    guardarGastoIndividual(nuevoGasto);
+
     renderGastos();
   }
 
@@ -134,6 +136,17 @@
     guardarGastos();
     renderGastos();
   }
+  function guardarGastoIndividual(gasto) {
+  fetch('/.netlify/functions/guardarGasto', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(gasto)
+  }).then(r => r.json())
+    .then(data => {
+      if (!data.success) console.error("Error guardando gasto:", data.error);
+    });
+}
+
     // Modo oscuro toggle
   const toggle = document.getElementById("modoToggle");
   toggle.addEventListener("click", () => {
