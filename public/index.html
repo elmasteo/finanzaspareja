@@ -49,9 +49,10 @@
   fetch('/gastos.json')
     .then(r => r.json())
     .then(data => {
-      gastos = data;
+      gastos = data.gastos || []; // extrae el array
       renderGastos();
     });
+
 
   document.getElementById("tipo-division").addEventListener("change", e => {
     document.getElementById("porcentaje-fields").style.display = e.target.value === "porcentaje" ? "flex" : "none";
