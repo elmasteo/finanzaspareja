@@ -106,7 +106,7 @@ function renderGastos() {
     div.setAttribute("data-autor", gasto.autor);
     div.innerHTML = `
       <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">&times;</button>
-      <div class="desc">${gasto.descripcion} - $${gasto.monto.toFixed(2)}</div>
+      <div class="desc">${gasto.descripcion} - $${gasto.monto}</div>
       <div class="meta">Agregado por ${gasto.autor}</div>
     `;
     cont.appendChild(div);
@@ -126,7 +126,7 @@ function renderGastos() {
 
   let texto = "Saldo balanceado";
   if (deuda > 0.01) texto = `Adriana debe $${deuda.toFixed(2)} a Santiago`;
-  else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda).toFixed(2)} a Adriana`;
+  else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
 
@@ -137,7 +137,7 @@ function renderGastos() {
     guardarGastos();
     renderGastos();
   }
-  
+
 function guardarGastoIndividual(gasto) {
   fetch('/.netlify/functions/guardarGasto', {
     method: 'POST',
