@@ -70,7 +70,7 @@
     });
   }
 
- async function agregarGasto() {
+  function agregarGasto() {
 
     const autor = document.getElementById("autor").value;
     const descripcion = document.getElementById("descripcion").value.trim();
@@ -102,7 +102,7 @@
     gastos.push(nuevoGasto);
     guardarGastoIndividual(nuevoGasto);
     const mensaje = `🔔 Se ha agregado un nuevo gasto:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
-   await enviarWhatsapp(mensaje);
+    enviarWhatsapp(mensaje);
 
     renderGastos();
   }
@@ -234,8 +234,8 @@ async function verLiquidaciones() {
 }
 
 
-async function guardarGastoIndividual(gasto) {
- await fetch('/.netlify/functions/guardarGasto', {
+ function guardarGastoIndividual(gasto) {
+  fetch('/.netlify/functions/guardarGasto', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(gasto)
@@ -245,7 +245,7 @@ async function guardarGastoIndividual(gasto) {
     });
 }
 
-async function enviarWhatsapp(mensaje) {
+ function enviarWhatsapp(mensaje) {
   const numeros = ["573219779439", "573157862008"]; // reemplaza por los 2 números
   numeros.forEach(num => {
     fetch("/.netlify/functions/enviarWhatsapp", {
