@@ -245,16 +245,17 @@ async function verLiquidaciones() {
     });
 }
 
- function enviarWhatsapp(mensaje) {
-  const numeros = ["573219779439", "573157862008"]; // reemplaza por los 2 números
+function enviarWhatsapp(mensaje) {
+  const numeros = ["573219779439", "573157862008"];
   numeros.forEach(num => {
     fetch("/.netlify/functions/enviarWhatsapp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ numero: number, text })
+      body: JSON.stringify({ number: num, text: mensaje })
     });
   });
 }
+
 
     // Modo oscuro toggle
   const toggle = document.getElementById("modoToggle");
