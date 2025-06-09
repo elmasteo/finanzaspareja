@@ -1,15 +1,6 @@
 {
   "gastos": [
     {
-      "id": 1749299330774,
-      "autor": "Santiago",
-      "descripcion": "Transporte",
-      "monto": 50000,
-      "tipo": "total",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50
-    },
-    {
       "id": 1749299394779,
       "autor": "Adriana",
       "descripcion": "Fruver-Empanadas",
