@@ -48,6 +48,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-06-09",
       "categoria": "Comida"
+    },
+    {
+      "id": 1749436183147,
+      "autor": "Santiago",
+      "descripcion": "Prueba",
+      "monto": 1000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-09",
+      "categoria": "Otros"
     }
   ]
 }
