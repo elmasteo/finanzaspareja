@@ -1,15 +1,6 @@
 {
   "gastos": [
     {
-      "id": 1749299394779,
-      "autor": "Adriana",
-      "descripcion": "Fruver-Empanadas",
-      "monto": 31595,
-      "tipo": "total",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50
-    },
-    {
       "id": 1749435899699,
       "autor": "Santiago",
       "descripcion": "Test",
