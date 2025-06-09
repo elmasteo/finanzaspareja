@@ -26,17 +26,6 @@
       "tipo": "total",
       "porcentajeSantiago": 50,
       "porcentajeAdriana": 50
-    },
-    {
-      "id": 1749433985319,
-      "autor": "Santiago",
-      "descripcion": "Test",
-      "monto": 100,
-      "tipo": "total",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-06-09",
-      "categoria": "Otros"
     }
   ]
 }
