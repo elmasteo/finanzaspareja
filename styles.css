@@ -150,7 +150,7 @@ section {
   opacity: 0.8;
 }
 
-.btn-eliminar {
+.btn-liquidar {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -162,7 +162,7 @@ section {
   transition: color 0.2s ease;
 }
 
-.btn-eliminar:hover {
+.btn-liquidar:hover {
   color: var(--danger);
 }
 

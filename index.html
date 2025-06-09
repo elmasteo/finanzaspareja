@@ -125,20 +125,6 @@
   return "Otros";
 }
 
-function confirmarEliminarGasto(id) {
-  if (confirm("¿Estás seguro de que deseas eliminar este gasto?")) {
-    eliminarGasto(id);
-  }
-}
-
-
-
-  function eliminarGasto(id) {
-    gastos = gastos.filter(g => g.id !== id);
-    guardarGastos();
-    renderGastos();
-  }
-
 function renderGastos() {
   const cont = document.getElementById("gastos-lista");
   cont.innerHTML = "";
@@ -166,7 +152,6 @@ function renderGastos() {
     }
 
     div.innerHTML = `
-      <button class="btn-eliminar" onclick="confirmarEliminarGasto(${gasto.id})">&times;</button>
       <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
       <div class="desc">${detalle}</div>
       <div class="meta">${gasto.fecha}</div>
@@ -224,8 +209,6 @@ async function liquidarGasto(id) {
 
   renderGastos();
 }
-
-
 
 async function liquidarDeudas() {
   if (!confirm("¿Seguro que deseas eliminar todos los gastos?")) return;
@@ -291,8 +274,6 @@ function enviarWhatsapp(mensaje) {
   });
 }
 
-
-    // Modo oscuro toggle
   const toggle = document.getElementById("modoToggle");
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
