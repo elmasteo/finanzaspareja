@@ -183,7 +183,7 @@ function renderGastos() {
   }
 
   let texto = "Saldo balanceado";
-  if (deuda > 0.01) texto = `Adriana debe $${deuda.toFixed(2)} a Santiago`;
+  if (deuda > 0.01) texto = `Adriana debe $${deuda} a Santiago`;
   else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
