@@ -224,7 +224,7 @@ async function enviarWhatsapp(mensaje) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      apikey: `${process.env.GITHUB_TOKEN}`, // usa process.env si es desde Netlify
+      apikey: `${process.env.EVOLUTIONAPI_TOKEN}`, // usa process.env si es desde Netlify
     },
     body: JSON.stringify({
       number: "+573219779439", // Reemplaza con número real
