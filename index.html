@@ -164,6 +164,7 @@ function renderGastos() {
     div.innerHTML = `
       <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
       <div class="desc">${detalle}</div>
+      <div class="descripcion">${gasto.descripcion || ''}</div>
       <div class="meta">${gasto.fecha}</div>
     `;
     cont.appendChild(div);
