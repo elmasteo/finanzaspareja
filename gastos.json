@@ -1,3 +1,15 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1749437451785,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo",
+      "monto": 10000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-09",
+      "categoria": "Comida"
+    }
+  ]
 }
