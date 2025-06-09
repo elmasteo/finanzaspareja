@@ -1,17 +1,6 @@
 {
   "gastos": [
     {
-      "id": 1749436109257,
-      "autor": "Adriana",
-      "descripcion": "Almuerzo",
-      "monto": 10000,
-      "tipo": "porcentaje",
-      "porcentajeSantiago": 45,
-      "porcentajeAdriana": 55,
-      "fecha": "2025-06-09",
-      "categoria": "Comida"
-    },
-    {
       "id": 1749436183147,
       "autor": "Santiago",
       "descripcion": "Prueba",
