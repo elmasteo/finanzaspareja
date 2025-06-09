@@ -62,15 +62,15 @@
     document.getElementById("porcentaje-fields").style.display = e.target.value === "porcentaje" ? "flex" : "none";
   });
 
-  function guardarGastos() {
-    fetch('/.netlify/functions/guardarGasto', {
+ async function guardarGastos() {
+   await fetch('/.netlify/functions/guardarGasto', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(gastos)
     });
   }
 
-  function agregarGasto() {
+ async function agregarGasto() {
 
     const autor = document.getElementById("autor").value;
     const descripcion = document.getElementById("descripcion").value.trim();
@@ -102,7 +102,7 @@
     gastos.push(nuevoGasto);
     guardarGastoIndividual(nuevoGasto);
     const mensaje = `🔔 Se ha agregado un nuevo gasto:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
-    enviarWhatsapp(mensaje);
+   await enviarWhatsapp(mensaje);
 
     renderGastos();
   }
@@ -234,8 +234,8 @@ async function verLiquidaciones() {
 }
 
 
-function guardarGastoIndividual(gasto) {
-  fetch('/.netlify/functions/guardarGasto', {
+async function guardarGastoIndividual(gasto) {
+ await fetch('/.netlify/functions/guardarGasto', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(gasto)
@@ -244,18 +244,7 @@ function guardarGastoIndividual(gasto) {
       if (!data.success) console.error("Error guardando gasto:", data.error);
     });
 }
-/*
-async function enviarWhatsapp(mensaje) {
-  await fetch("/.netlify/functions/enviarWhatsapp", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      number: "573219779439",
-      text: mensaje
-    })
-  });
-}
-*/
+
 async function enviarWhatsapp(mensaje) {
   const numeros = ["573219779439", "573157862008"]; // reemplaza por los 2 números
   numeros.forEach(num => {
@@ -266,9 +255,6 @@ async function enviarWhatsapp(mensaje) {
     });
   });
 }
-
-
-
 
     // Modo oscuro toggle
   const toggle = document.getElementById("modoToggle");
