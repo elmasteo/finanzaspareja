@@ -1,4 +1,15 @@
 {
   "gastos": [
+    {
+      "id": 1749506136968,
+      "autor": "Adriana",
+      "descripcion": "Pared",
+      "monto": 15000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-06-09",
+      "categoria": "Otros"
+    }
   ]
 }
