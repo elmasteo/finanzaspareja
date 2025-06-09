@@ -10,17 +10,6 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-06-09",
       "categoria": "Otros"
-    },
-    {
-      "id": 1749439473522,
-      "autor": "Adriana",
-      "descripcion": "Test 2",
-      "monto": 1000,
-      "tipo": "mitad",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-06-09",
-      "categoria": "Otros"
     }
   ]
 }
