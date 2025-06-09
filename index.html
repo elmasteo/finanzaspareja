@@ -220,18 +220,16 @@ function guardarGastoIndividual(gasto) {
 }
 
 async function enviarWhatsapp(mensaje) {
-  await fetch("https://ip-172-31-43-210.tailf8b5ff.ts.net/message/sendText/misFinanzas", {
+  await fetch("/.netlify/functions/enviarWhatsapp", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: `${process.env.EVOLUTIONAPI_TOKEN}`, // usa process.env si es desde Netlify
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      number: "+573219779439", // Reemplaza con número real
+      number: "573219779439",
       text: mensaje
     })
   });
 }
+
 
 
     // Modo oscuro toggle
