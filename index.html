@@ -48,12 +48,27 @@
 
 <script>
 async function init() {
-  // Cargar gastos
+  const clave = prompt("🔒 Ingresa tu clave para acceder:");
+
+  const res = await fetch('/.netlify/functions/validarClave', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ clave })
+  });
+
+  const { autorizado } = await res.json();
+
+  if (!autorizado) {
+    alert("Clave incorrecta. Acceso denegado.");
+    document.body.innerHTML = "<h2 style='text-align:center; margin-top:20%'>🚫 Acceso no autorizado</h2>";
+    return;
+  }
+
+  // Si la clave es correcta, continuar:
   const resGastos = await fetch('/gastos.json');
   const dataGastos = await resGastos.json();
   gastos = dataGastos.gastos || [];
 
-  // Cargar liquidaciones
   try {
     const resLiq = await fetch('/liquidaciones.json');
     const dataLiq = await resLiq.json();
