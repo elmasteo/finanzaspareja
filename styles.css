@@ -195,6 +195,28 @@ section {
   transform: scale(1.05);
 }
 
+a > button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(9, 132, 227, 0.3);
+  transition: background 0.3s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+a > button:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+
 @media(max-width: 600px) {
   body {
     padding: 1rem 0.5rem;
