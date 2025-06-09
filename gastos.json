@@ -26,17 +26,6 @@
       "tipo": "total",
       "porcentajeSantiago": 50,
       "porcentajeAdriana": 50
-    },
-    {
-      "id": 1749434384182,
-      "autor": "Adriana",
-      "descripcion": "Uber",
-      "monto": 20000,
-      "tipo": "porcentaje",
-      "porcentajeSantiago": 45,
-      "porcentajeAdriana": 55,
-      "fecha": "2025-06-09",
-      "categoria": "Transporte"
     }
   ]
 }
