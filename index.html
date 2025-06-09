@@ -47,16 +47,26 @@
 </a>
 
 <script>
-  let gastos = [];
-  let liquidaciones = [];
+async function init() {
+  // Cargar gastos
+  const resGastos = await fetch('/gastos.json');
+  const dataGastos = await resGastos.json();
+  gastos = dataGastos.gastos || [];
 
-  fetch('/gastos.json')
-    .then(r => r.json())
-    .then(data => {
-      gastos = data.gastos || []; // extrae el array
-      renderGastos();
-    });
+  // Cargar liquidaciones
+  try {
+    const resLiq = await fetch('/liquidaciones.json');
+    const dataLiq = await resLiq.json();
+    liquidaciones = Array.isArray(dataLiq) ? dataLiq : [];
+  } catch {
+    liquidaciones = [];
+  }
 
+  renderGastos();
+}
+
+// Llama init al cargar
+init();
 
   document.getElementById("tipo-division").addEventListener("change", e => {
     document.getElementById("porcentaje-fields").style.display = e.target.value === "porcentaje" ? "flex" : "none";
