@@ -1,15 +1,3 @@
 {
-  "gastos": [
-    {
-      "id": 1749438434565,
-      "autor": "Santiago",
-      "descripcion": "Test2",
-      "monto": 1000,
-      "tipo": "mitad",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-06-09",
-      "categoria": "Otros"
-    }
-  ]
+  "gastos": []
 }
