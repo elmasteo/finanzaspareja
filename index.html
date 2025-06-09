@@ -284,13 +284,15 @@ function enviarWhatsapp(mensaje) {
   });
 }
 
+document.body.classList.add("dark");
+
   const toggle = document.getElementById("modoToggle");
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     toggle.textContent = document.body.classList.contains("dark") ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
   });
 
-  document.body.classList.add("dark");
+  
 </script>
 </body>
 </html>
