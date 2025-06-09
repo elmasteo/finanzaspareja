@@ -42,9 +42,11 @@
 <section id="gastos-lista"></section>
 
 <button id="btn-liquidar-todo" onclick="liquidarDeudas()">💰</button>
+<button onclick="verLiquidaciones()">📊 Ver Liquidaciones</button>
 
 <script>
   let gastos = [];
+  let liquidaciones = [];
 
   fetch('/gastos.json')
     .then(r => r.json())
@@ -72,6 +74,8 @@
     const descripcion = document.getElementById("descripcion").value.trim();
     const monto = parseFloat(document.getElementById("monto").value);
     const tipo = document.getElementById("tipo-division").value;
+    const fecha = new Date().toISOString().split("T")[0]; // formato YYYY-MM-DD
+    const categoria = categorizarDescripcion(descripcion);
 
     if (!descripcion || isNaN(monto) || monto <= 0) return alert("Complete todos los campos correctamente");
 
@@ -82,12 +86,43 @@
       if (porcentajeSantiago + porcentajeAdriana !== 100) return alert("Los porcentajes deben sumar 100%");
     }
 
-    const nuevoGasto = { id: Date.now(), autor, descripcion, monto, tipo, porcentajeSantiago, porcentajeAdriana };
+    const nuevoGasto = {
+      id: Date.now(),
+      autor,
+      descripcion,
+      monto,
+      tipo,
+      porcentajeSantiago,
+      porcentajeAdriana,
+      fecha,
+      categoria
+    };
     gastos.push(nuevoGasto);
     guardarGastoIndividual(nuevoGasto);
+    const mensaje = `🔔 Se ha agregado un nuevo gasto:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
+    enviarWhatsapp(mensaje);
 
     renderGastos();
   }
+
+  function categorizarDescripcion(desc) {
+  const mapa = {
+    Comida: ["almuerzo", "cena", "comida", "hamburguesa", "restaurante", "taco"],
+    Transporte: ["uber", "taxi", "bus", "pasaje", "metro", "transporte"],
+    Servicios: ["agua", "luz", "gas", "internet", "teléfono"],
+    Hogar: ["arriendo", "mercado", "supermercado", "limpieza"],
+    Entretenimiento: ["cine", "netflix", "spotify", "juego", "fiesta"],
+    Salud: ["medicina", "doctor", "salud", "farmacia"],
+    Otros: []
+  };
+
+  const descLower = desc.toLowerCase();
+  for (const [categoria, palabras] of Object.entries(mapa)) {
+    if (palabras.some(p => descLower.includes(p))) return categoria;
+  }
+  return "Otros";
+}
+
 
   function eliminarGasto(id) {
     gastos = gastos.filter(g => g.id !== id);
@@ -131,12 +166,47 @@ function renderGastos() {
 }
 
 
-  function liquidarDeudas() {
-    if (!confirm("¿Seguro que deseas eliminar todos los gastos?")) return;
-    gastos = [];
-    guardarGastos();
-    renderGastos();
-  }
+async function liquidarDeudas() {
+  if (!confirm("¿Seguro que deseas eliminar todos los gastos?")) return;
+
+  const fechaLiquidacion = new Date().toISOString().split("T")[0];
+  const lote = {
+    fecha: fechaLiquidacion,
+    gastos: [...gastos]
+  };
+  liquidaciones.push(lote);
+
+  await fetch('/.netlify/functions/guardarLiquidaciones', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(liquidaciones)
+  });
+
+  // Enviar notificación por WhatsApp
+  const detalle = gastos.map(g => `- ${g.descripcion} ($${g.monto})`).join("\n");
+  enviarWhatsapp(`🔔 Se ha generado una liquidación:\n\n${detalle}`);
+
+  gastos = [];
+  guardarGastos();
+  renderGastos();
+}
+
+async function verLiquidaciones() {
+  const res = await fetch("/liquidaciones.json");
+  const data = await res.json();
+  liquidaciones = data;
+
+  const mes = prompt("Filtrar por mes (formato YYYY-MM, ejemplo 2025-06):");
+
+  const resultados = liquidaciones.flatMap(lote => {
+    return lote.gastos
+      .filter(g => g.fecha.startsWith(mes))
+      .map(g => `${g.fecha} - ${g.descripcion} ($${g.monto}) [${g.categoria}]`);
+  });
+
+  alert("📅 Resultados:\n\n" + resultados.join("\n"));
+}
+
 
 function guardarGastoIndividual(gasto) {
   fetch('/.netlify/functions/guardarGasto', {
@@ -147,6 +217,20 @@ function guardarGastoIndividual(gasto) {
     .then(data => {
       if (!data.success) console.error("Error guardando gasto:", data.error);
     });
+}
+
+async function enviarWhatsapp(mensaje) {
+  await fetch("https://ip-172-31-43-210.tailf8b5ff.ts.net/message/sendText/misFinanzas", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: `${process.env.GITHUB_TOKEN}`, // usa process.env si es desde Netlify
+    },
+    body: JSON.stringify({
+      number: "+573219779439", // Reemplaza con número real
+      text: mensaje
+    })
+  });
 }
 
 
