@@ -262,7 +262,7 @@ function enviarWhatsapp(mensaje) {
     fetch("/.netlify/functions/enviarWhatsapp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ numero: num, mensaje })
+      body: JSON.stringify({ numero: number, text })
     });
   });
 }
