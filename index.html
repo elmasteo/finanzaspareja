@@ -167,6 +167,7 @@ function renderGastos() {
 
     div.innerHTML = `
       <button class="btn-eliminar" onclick="confirmarEliminarGasto(${gasto.id})">&times;</button>
+      <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
       <div class="desc">${detalle}</div>
       <div class="meta">${gasto.fecha}</div>
     `;
@@ -190,6 +191,40 @@ function renderGastos() {
   else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
+
+async function liquidarGasto(id) {
+  if (!confirm("¿Seguro que deseas liquidar este gasto?")) return;
+
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return alert("Gasto no encontrado");
+
+  // Fecha actual para la liquidación
+  const fechaLiquidacion = new Date().toISOString().split("T")[0];
+
+  // Agregar gasto a liquidaciones
+  liquidaciones.push({
+    fecha: fechaLiquidacion,
+    gastos: [gasto]
+  });
+
+  // Guardar liquidaciones
+  await fetch('/.netlify/functions/guardarLiquidaciones', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(liquidaciones)
+  });
+
+  // Enviar notificación WhatsApp
+  const mensaje = `🔔 Se ha liquidado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
+  enviarWhatsapp(mensaje);
+
+  // Eliminar gasto de lista y guardar
+  gastos = gastos.filter(g => g.id !== id);
+  await guardarGastos();
+
+  renderGastos();
+}
+
 
 
 async function liquidarDeudas() {
