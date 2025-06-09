@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Liquidaciones</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Resumen de Liquidaciones</h1>
+  <input type="month" id="filtroFecha" />
+  <canvas id="graficoTorta"></canvas>
+
+  <script>
+    let liquidaciones = [];
+
+    async function cargarLiquidaciones() {
+      const res = await fetch("/liquidaciones.json");
+      liquidaciones = await res.json();
+      renderTorta();
+    }
+
+    function renderTorta() {
+      const mes = document.getElementById("filtroFecha").value;
+      const categorias = {};
+
+      liquidaciones.forEach(lote => {
+        lote.gastos.forEach(g => {
+          if (!mes || g.fecha.startsWith(mes)) {
+            categorias[g.categoria] = (categorias[g.categoria] || 0) + g.monto;
+          }
+        });
+      });
+
+      const ctx = document.getElementById("graficoTorta").getContext("2d");
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: Object.keys(categorias),
+          datasets: [{
+            data: Object.values(categorias),
+            backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff', '#ff9f40'],
+          }]
+        }
+      });
+    }
+
+    document.getElementById("filtroFecha").addEventListener("change", renderTorta);
+    cargarLiquidaciones();
+  </script>
+</body>
+</html>

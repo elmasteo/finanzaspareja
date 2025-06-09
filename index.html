@@ -123,6 +123,13 @@
   return "Otros";
 }
 
+function confirmarEliminarGasto(id) {
+  if (confirm("¿Estás seguro de que deseas eliminar este gasto?")) {
+    eliminarGasto(id);
+  }
+}
+
+
 
   function eliminarGasto(id) {
     gastos = gastos.filter(g => g.id !== id);
@@ -139,10 +146,27 @@ function renderGastos() {
     const div = document.createElement("div");
     div.className = "gasto-item";
     div.setAttribute("data-autor", gasto.autor);
+    let detalle = '';
+    if (gasto.tipo === "total") {
+      if (gasto.autor === "Santiago") {
+        detalle = `Adriana debe a Santiago: $${gasto.monto}`;
+      } else {
+        detalle = `Santiago debe a Adriana: $${gasto.monto}`;
+      }
+    } else if (gasto.tipo === "mitad") {
+      const mitad = gasto.monto / 2;
+      detalle = `${gasto.autor} pagó $${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe $${mitad}`;
+    } else {
+      const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+      const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+      const debe = gasto.autor === "Santiago" ? a : s;
+      detalle = `${gasto.autor} pagó $${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe $${debe}`;
+    }
+
     div.innerHTML = `
-      <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">&times;</button>
-      <div class="desc">${gasto.descripcion} - $${gasto.monto}</div>
-      <div class="meta">Agregado por ${gasto.autor}</div>
+      <button class="btn-eliminar" onclick="confirmarEliminarGasto(${gasto.id})">&times;</button>
+      <div class="desc">${detalle}</div>
+      <div class="meta">${gasto.fecha}</div>
     `;
     cont.appendChild(div);
 
@@ -182,9 +206,9 @@ async function liquidarDeudas() {
     body: JSON.stringify(liquidaciones)
   });
 
-  // Enviar notificación por WhatsApp
-  const detalle = gastos.map(g => `- ${g.descripcion} ($${g.monto})`).join("\n");
+ const detalle = gastos.map(g => `- ${g.descripcion} ($${g.monto})`).join("\n");
   enviarWhatsapp(`🔔 Se ha generado una liquidación:\n\n${detalle}`);
+
 
   gastos = [];
   guardarGastos();
@@ -218,7 +242,7 @@ function guardarGastoIndividual(gasto) {
       if (!data.success) console.error("Error guardando gasto:", data.error);
     });
 }
-
+/*
 async function enviarWhatsapp(mensaje) {
   await fetch("/.netlify/functions/enviarWhatsapp", {
     method: "POST",
@@ -229,6 +253,18 @@ async function enviarWhatsapp(mensaje) {
     })
   });
 }
+*/
+function enviarWhatsapp(mensaje) {
+  const numeros = ["573219779439", "573157862008"]; // reemplaza por los 2 números
+  numeros.forEach(num => {
+    fetch("/.netlify/functions/enviarWhatsapp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ numero: num, mensaje })
+    });
+  });
+}
+
 
 
 
@@ -238,6 +274,8 @@ async function enviarWhatsapp(mensaje) {
     document.body.classList.toggle("dark");
     toggle.textContent = document.body.classList.contains("dark") ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
   });
+
+  document.body.classList.add("dark");
 </script>
 </body>
 </html>
