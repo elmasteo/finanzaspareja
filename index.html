@@ -48,7 +48,48 @@
 
 <script>
 async function init() {
-  const clave = prompt("🔒 Ingresa tu clave para acceder:");
+  const clave = await new Promise(resolve => {
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = "100vw";
+  overlay.style.height = "100vh";
+  overlay.style.background = "rgba(0,0,0,0.8)";
+  overlay.style.display = "flex";
+  overlay.style.flexDirection = "column";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignItems = "center";
+  overlay.style.zIndex = 9999;
+
+  const input = document.createElement("input");
+  input.type = "password";
+  input.placeholder = "🔒 Ingresa tu clave";
+  input.style.padding = "10px";
+  input.style.fontSize = "16px";
+  input.style.borderRadius = "5px";
+  input.style.border = "1px solid #ccc";
+  input.style.marginBottom = "10px";
+
+  const btn = document.createElement("button");
+  btn.textContent = "Acceder";
+  btn.style.padding = "10px 20px";
+  btn.style.fontSize = "16px";
+  btn.style.border = "none";
+  btn.style.borderRadius = "5px";
+  btn.style.cursor = "pointer";
+
+  btn.onclick = () => {
+    const val = input.value;
+    document.body.removeChild(overlay);
+    resolve(val);
+  };
+
+  overlay.appendChild(input);
+  overlay.appendChild(btn);
+  document.body.appendChild(overlay);
+});
+
 
   const res = await fetch('/.netlify/functions/validarClave', {
     method: 'POST',
@@ -126,7 +167,8 @@ init();
     };
     gastos.push(nuevoGasto);
     guardarGastoIndividual(nuevoGasto);
-    const mensaje = `🔔 Se ha agregado un nuevo gasto:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
+    const mensaje = `🔔 Nuevo gasto agregado:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+
     enviarWhatsapp(mensaje);
 
     renderGastos();
@@ -202,6 +244,28 @@ function renderGastos() {
   else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
+
+function obtenerTextoDeudaActual() {
+  let deuda = 0;
+  for (let gasto of gastos) {
+    if (gasto.tipo === "total") {
+      deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
+    } else if (gasto.tipo === "mitad") {
+      const mitad = gasto.monto / 2;
+      deuda += gasto.autor === "Santiago" ? mitad : -mitad;
+    } else if (gasto.tipo === "porcentaje") {
+      const montoSantiago = (gasto.porcentajeSantiago / 100) * gasto.monto;
+      const montoAdriana = (gasto.porcentajeAdriana / 100) * gasto.monto;
+      const deberAdriana = gasto.autor === "Santiago" ? montoAdriana : -montoSantiago;
+      deuda += deberAdriana;
+    }
+  }
+
+  if (Math.abs(deuda) < 0.01) return "Saldo balanceado";
+  if (deuda > 0.01) return `Adriana debe $${deuda.toFixed(2)} a Santiago`;
+  return `Santiago debe $${Math.abs(deuda).toFixed(2)} a Adriana`;
+}
+
 
 async function liquidarGasto(id) {
   if (!confirm("¿Seguro que deseas liquidar este gasto?")) return;
