@@ -76,6 +76,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-06-20",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1750451907285,
+      "autor": "Adriana",
+      "descripcion": "Bolsa regalo",
+      "monto": 4000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-20",
+      "categoria": "Otros"
     }
   ]
 }
