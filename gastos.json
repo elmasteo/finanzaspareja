@@ -54,6 +54,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-06-20",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1750451871289,
+      "autor": "Adriana",
+      "descripcion": "Perfume",
+      "monto": 50000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-20",
+      "categoria": "Otros"
     }
   ]
 }
