@@ -43,6 +43,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-06-18",
       "categoria": "Otros"
+    },
+    {
+      "id": 1750451846977,
+      "autor": "Adriana",
+      "descripcion": "Mercado",
+      "monto": 27580,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-06-20",
+      "categoria": "Hogar"
     }
   ]
 }
