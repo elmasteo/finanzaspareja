@@ -54,6 +54,17 @@
       "porcentajeAdriana": 54,
       "fecha": "2025-06-25",
       "categoria": "Otros"
+    },
+    {
+      "id": 1750811053850,
+      "autor": "Adriana",
+      "descripcion": "Copa",
+      "monto": 6000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-25",
+      "categoria": "Otros"
     }
   ]
 }
