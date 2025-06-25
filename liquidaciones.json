@@ -102,5 +102,98 @@
         "categoria": "Otros"
       }
     ]
+  },
+  {
+    "fecha": "2025-06-25",
+    "gastos": [
+      {
+        "id": 1750707411788,
+        "autor": "Adriana",
+        "descripcion": "Uber",
+        "monto": 11025,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-23",
+        "categoria": "Transporte"
+      },
+      {
+        "id": 1750707448778,
+        "autor": "Adriana",
+        "descripcion": "Uber",
+        "monto": 6400,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-23",
+        "categoria": "Transporte"
+      },
+      {
+        "id": 1750707512101,
+        "autor": "Adriana",
+        "descripcion": "Cerveza y gaseosa",
+        "monto": 59000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-23",
+        "categoria": "Servicios"
+      },
+      {
+        "id": 1750734973795,
+        "autor": "Adriana",
+        "descripcion": "Almuerzo",
+        "monto": 94475,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-24",
+        "categoria": "Comida"
+      },
+      {
+        "id": 1750811050094,
+        "autor": "Adriana",
+        "descripcion": "Ganchos",
+        "monto": 30000,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 46,
+        "porcentajeAdriana": 54,
+        "fecha": "2025-06-25",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1750811053850,
+        "autor": "Adriana",
+        "descripcion": "Copa",
+        "monto": 6000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-25",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1750811179751,
+        "autor": "Adriana",
+        "descripcion": "Cuchillas máquina",
+        "monto": 15000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-25",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1750811224269,
+        "autor": "Adriana",
+        "descripcion": "Empanadas",
+        "monto": 19500,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-25",
+        "categoria": "Otros"
+      }
+    ]
   }
 ]
