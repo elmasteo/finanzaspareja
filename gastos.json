@@ -1,3 +1,15 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1750948636654,
+      "autor": "Adriana",
+      "descripcion": "Oído",
+      "monto": 65000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-26",
+      "categoria": "Otros"
+    }
+  ]
 }
