@@ -21,6 +21,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-06-26",
       "categoria": "Otros"
+    },
+    {
+      "id": 1751130669628,
+      "autor": "Santiago",
+      "descripcion": "Desayuno",
+      "monto": 31000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-06-28",
+      "categoria": "Otros"
     }
   ]
 }
