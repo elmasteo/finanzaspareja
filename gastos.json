@@ -54,6 +54,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-06-30",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1751248663699,
+      "autor": "Adriana",
+      "descripcion": "Mercado",
+      "monto": 570200,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-06-30",
+      "categoria": "Hogar"
     }
   ]
 }
