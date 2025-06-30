@@ -195,5 +195,21 @@
         "categoria": "Otros"
       }
     ]
+  },
+  {
+    "fecha": "2025-06-30",
+    "gastos": [
+      {
+        "id": 1751326781717,
+        "autor": "Adriana",
+        "descripcion": "Parqueadero",
+        "monto": 45000,
+        "tipo": "mitad",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-06-30",
+        "categoria": "Otros"
+      }
+    ]
   }
 ]
