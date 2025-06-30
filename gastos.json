@@ -109,6 +109,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-06-30",
       "categoria": "Otros"
+    },
+    {
+      "id": 1751324228834,
+      "autor": "Adriana",
+      "descripcion": "D1",
+      "monto": 44600,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-06-30",
+      "categoria": "Otros"
     }
   ]
 }
