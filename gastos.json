@@ -120,17 +120,6 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-06-30",
       "categoria": "Otros"
-    },
-    {
-      "id": 1751326783266,
-      "autor": "Adriana",
-      "descripcion": "Parqueadero",
-      "monto": 45000,
-      "tipo": "mitad",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-06-30",
-      "categoria": "Otros"
     }
   ]
 }
