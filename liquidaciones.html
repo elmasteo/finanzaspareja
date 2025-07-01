@@ -148,6 +148,9 @@
 
   <canvas id="graficoTorta"></canvas>
 
+  <div id="detalleCategoria" style="max-width: 600px; width: 100%; margin-top: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1rem; display: none;"></div>
+
+
   <button id="btnVolver" type="button">Volver</button>
 
   <script>
@@ -189,6 +192,31 @@
           }]
         },
         options: {
+          onClick: function (evt, elements) {
+          if (!elements.length) return;
+
+          const index = elements[0].index;
+          const categoria = this.data.labels[index];
+
+          const desde = document.getElementById("desde").value;
+          const hasta = document.getElementById("hasta").value;
+
+          const gastosFiltrados = [];
+          liquidaciones.forEach(lote => {
+            lote.gastos.forEach(g => {
+              if (
+                g.categoria === categoria &&
+                (!desde || g.fecha >= desde + '-01') &&
+                (!hasta || g.fecha <= hasta + '-31')
+              ) {
+                gastosFiltrados.push(g);
+              }
+            });
+          });
+
+          mostrarDetalleCategoria(categoria, gastosFiltrados);
+        }
+
           responsive: true,
           plugins: {
             legend: {
@@ -213,6 +241,25 @@
         }
       });
     }
+
+    function mostrarDetalleCategoria(nombreCategoria, gastosFiltrados) {
+  const detalle = document.getElementById("detalleCategoria");
+  const lista = gastosFiltrados.map(g => {
+    return `<li>
+      <strong>${g.descripcion}</strong> — $${g.monto.toLocaleString()}<br>
+      <small>${g.fecha} - ${g.autor}</small>
+    </li>`;
+  }).join('');
+
+  detalle.innerHTML = `
+    <h2 style="margin-top:0;">${nombreCategoria}</h2>
+    <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.75rem;">
+      ${lista}
+    </ul>
+  `;
+  detalle.style.display = 'block';
+}
+
 
     document.getElementById("desde").addEventListener("change", renderTorta);
     document.getElementById("hasta").addEventListener("change", renderTorta);
