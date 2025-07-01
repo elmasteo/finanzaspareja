@@ -182,64 +182,64 @@
         chart.destroy();
       }
 
-      chart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-          labels: Object.keys(categorias),
-          datasets: [{
-            data: Object.values(categorias),
-            backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff', '#ff9f40', '#e17055', '#00b894', '#fd79a8'],
-          }]
-        },
-        options: {
-          onClick: function (evt, elements) {
-          if (!elements.length) return;
+chart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: Object.keys(categorias),
+    datasets: [{
+      data: Object.values(categorias),
+      backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff', '#ff9f40', '#e17055', '#00b894', '#fd79a8'],
+    }]
+  },
+  options: {
+    responsive: true,
+    onClick: function (evt, elements) {
+      if (!elements.length) return;
 
-          const index = elements[0].index;
-          const categoria = this.data.labels[index];
+      const index = elements[0].index;
+      const categoria = this.data.labels[index];
 
-          const desde = document.getElementById("desde").value;
-          const hasta = document.getElementById("hasta").value;
+      const desde = document.getElementById("desde").value;
+      const hasta = document.getElementById("hasta").value;
 
-          const gastosFiltrados = [];
-          liquidaciones.forEach(lote => {
-            lote.gastos.forEach(g => {
-              if (
-                g.categoria === categoria &&
-                (!desde || g.fecha >= desde + '-01') &&
-                (!hasta || g.fecha <= hasta + '-31')
-              ) {
-                gastosFiltrados.push(g);
-              }
-            });
-          });
+      const gastosFiltrados = [];
+      liquidaciones.forEach(lote => {
+        lote.gastos.forEach(g => {
+          if (
+            g.categoria === categoria &&
+            (!desde || g.fecha >= desde + '-01') &&
+            (!hasta || g.fecha <= hasta + '-31')
+          ) {
+            gastosFiltrados.push(g);
+          }
+        });
+      });
 
-          mostrarDetalleCategoria(categoria, gastosFiltrados);
+      mostrarDetalleCategoria(categoria, gastosFiltrados);
+    },
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          padding: 15,
+          font: { size: 14 },
+          boxWidth: 16,
+          boxHeight: 16,
         }
-
-          responsive: true,
-          plugins: {
-            legend: {
-              position: 'bottom',
-              labels: {
-                padding: 15,
-                font: { size: 14 },
-                boxWidth: 16,
-                boxHeight: 16,
-              }
-            },
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  const label = context.label || '';
-                  const value = context.parsed || 0;
-                  return label + ': $' + value.toFixed(2);
-                }
-              }
-            }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const label = context.label || '';
+            const value = context.parsed || 0;
+            return label + ': $' + value.toFixed(2);
           }
         }
-      });
+      }
+    }
+  }
+});
+
     }
 
     function mostrarDetalleCategoria(nombreCategoria, gastosFiltrados) {
