@@ -175,15 +175,42 @@ init();
   }
 
   function categorizarDescripcion(desc) {
-  const mapa = {
-    Comida: ["almuerzo", "cena", "comida", "hamburguesa", "restaurante", "taco"],
-    Transporte: ["uber", "taxi", "bus", "pasaje", "metro", "transporte"],
-    Servicios: ["agua", "luz", "gas", "internet", "teléfono"],
-    Hogar: ["arriendo", "mercado", "supermercado", "limpieza"],
-    Entretenimiento: ["cine", "netflix", "spotify", "juego", "fiesta"],
-    Salud: ["medicina", "doctor", "salud", "farmacia"],
-    Otros: []
-  };
+ const mapa = {
+  Comida: [
+    "almuerzo", "cena", "comida", "hamburguesa", "restaurante", "taco", "desayuno", "pizza", "pollo",
+    "carne", "empanada", "antojito", "sándwich", "perro", "comida rápida", "arepa", "antojitos"
+  ],
+  Transporte: [
+    "uber", "taxi", "bus", "pasaje", "metro", "transporte", "parqueadero", "gasolina", "peaje", "viaje", "conductor"
+  ],
+  Servicios: [
+    "agua", "luz", "gas", "internet", "teléfono", "servicio", "energía", "recibo", "factura", "tv", "streaming"
+  ],
+  Hogar: [
+    "arriendo", "mercado", "supermercado", "limpieza", "aseo", "hogar", "d1", "exito", "almacén", "fruver",
+    "queso", "compra casa", "detergente"
+  ],
+  Entretenimiento: [
+    "cine", "netflix", "spotify", "juego", "fiesta", "licor", "cerveza", "rumba", "bar", "concierto", "play", "ocio", "discoteca"
+  ],
+  Salud: [
+    "medicina", "doctor", "salud", "farmacia", "dentista", "consulta", "cita médica", "oído", "tratamiento", "clínica"
+  ],
+  Vestuario: [
+    "ropa", "pantalón", "chaqueta", "camisa", "zapato", "tenis", "blusa", "jean", "vestido", "ropa interior", "copa"
+  ],
+  Regalos: [
+    "regalo", "cumpleaños", "detalles", "obsequio", "bolsa regalo", "perfume", "sorpresa"
+  ],
+  Tecnologia: [
+    "celular", "computador", "tablet", "audífono", "teclado", "mouse", "pantalla", "tv", "electrónico"
+  ],
+  Mascotas: [
+    "mascota", "perro", "gato", "comida perro", "comida gato", "veterinario", "collar"
+  ],
+  Otros: []
+};
+
 
   const descLower = desc.toLowerCase();
   for (const [categoria, palabras] of Object.entries(mapa)) {
