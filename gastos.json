@@ -1,3 +1,15 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1751906026721,
+      "autor": "Adriana",
+      "descripcion": "Refractaria",
+      "monto": 32000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-07-07",
+      "categoria": "Otros"
+    }
+  ]
 }
