@@ -10,6 +10,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-07-07",
       "categoria": "Otros"
+    },
+    {
+      "id": 1751906052483,
+      "autor": "Adriana",
+      "descripcion": "Carne",
+      "monto": 24000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-07-07",
+      "categoria": "Comida"
     }
   ]
 }
