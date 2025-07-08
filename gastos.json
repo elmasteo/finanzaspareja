@@ -21,6 +21,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-07-07",
       "categoria": "Comida"
+    },
+    {
+      "id": 1752015961423,
+      "autor": "Adriana",
+      "descripcion": "Sombrilla",
+      "monto": 32000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-07-08",
+      "categoria": "Otros"
     }
   ]
 }
