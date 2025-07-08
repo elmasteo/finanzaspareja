@@ -32,6 +32,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-07-08",
       "categoria": "Otros"
+    },
+    {
+      "id": 1752016022430,
+      "autor": "Adriana",
+      "descripcion": "Cubreecho",
+      "monto": 187200,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-07-08",
+      "categoria": "Otros"
     }
   ]
 }
