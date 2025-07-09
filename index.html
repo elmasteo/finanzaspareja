@@ -167,7 +167,7 @@ init();
     };
     gastos.push(nuevoGasto);
     guardarGastoIndividual(nuevoGasto);
-    const mensaje = `🔔 Nuevo gasto agregado:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+    const mensaje = `🔔 Nuevo gasto agregado:\n\nDescripción: "${descripcion}"\nMonto: $${monto}\nAgregado por ${autor}\nFecha: ${fecha}\nDivisión: ${getDivisionDetalle(nuevoGasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
 
     enviarWhatsapp(mensaje);
 
@@ -247,10 +247,13 @@ function renderGastos() {
 
     div.innerHTML = `
       <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
+      <button class="btn-editar" onclick="editarGasto(${gasto.id})">✏️</button>
+      <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">🗑️</button>
       <div class="desc">${detalle}</div>
       <div class="descripcion">${gasto.descripcion || ''}</div>
       <div class="meta">${gasto.fecha}</div>
     `;
+
     cont.appendChild(div);
 
     if (gasto.tipo === "total") {
@@ -271,6 +274,55 @@ function renderGastos() {
   else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
+
+function editarGasto(id) {
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return alert("Gasto no encontrado");
+
+  const nuevaDescripcion = prompt("Nueva descripción:", gasto.descripcion);
+  if (!nuevaDescripcion) return;
+
+  const nuevoMonto = parseFloat(prompt("Nuevo monto:", gasto.monto));
+  if (isNaN(nuevoMonto) || nuevoMonto <= 0) return alert("Monto inválido");
+
+  const nuevaDivision = prompt("Tipo de división (total/mitad/porcentaje):", gasto.tipo);
+  if (!["total", "mitad", "porcentaje"].includes(nuevaDivision)) return alert("Tipo inválido");
+
+  let porcentajeSantiago = 50, porcentajeAdriana = 50;
+
+  if (nuevaDivision === "porcentaje") {
+    porcentajeSantiago = parseInt(prompt("Porcentaje Santiago:", gasto.porcentajeSantiago)) || 0;
+    porcentajeAdriana = parseInt(prompt("Porcentaje Adriana:", gasto.porcentajeAdriana)) || 0;
+    if (porcentajeSantiago + porcentajeAdriana !== 100) return alert("Los porcentajes deben sumar 100%");
+  }
+
+  gasto.descripcion = nuevaDescripcion;
+  gasto.monto = nuevoMonto;
+  gasto.tipo = nuevaDivision;
+  gasto.porcentajeSantiago = porcentajeSantiago;
+  gasto.porcentajeAdriana = porcentajeAdriana;
+
+  guardarGastos();
+  renderGastos();
+
+  const mensaje = `🔄 Se ha actualizado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+  enviarWhatsapp(mensaje);
+}
+
+async function eliminarGasto(id) {
+  if (!confirm("¿Eliminar este gasto? No se guardará en liquidaciones.")) return;
+
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return alert("Gasto no encontrado");
+
+  gastos = gastos.filter(g => g.id !== id);
+  await guardarGastos();
+  renderGastos();
+
+  const mensaje = `❌ Se eliminó un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}`;
+  enviarWhatsapp(mensaje);
+}
+
 
 function obtenerTextoDeudaActual() {
   let deuda = 0;
@@ -379,6 +431,24 @@ async function verLiquidaciones() {
       if (!data.success) console.error("Error guardando gasto:", data.error);
     });
 }
+
+function getDivisionDetalle(gasto) {
+  if (gasto.tipo === "mitad") {
+    const mitad = gasto.monto / 2;
+    return `Mitad y mitad – $${mitad.toFixed(2)} para cada uno`;
+  } else if (gasto.tipo === "total") {
+    if (gasto.autor === "Santiago") {
+      return `Santiago pagó el total – Adriana debe $${gasto.monto.toFixed(2)}`;
+    } else {
+      return `Adriana pagó el total – Santiago debe $${gasto.monto.toFixed(2)}`;
+    }
+  } else {
+    const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+    const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+    return `Porcentaje – Santiago: $${s.toFixed(2)} / Adriana: $${a.toFixed(2)} (${gasto.porcentajeSantiago}% / ${gasto.porcentajeAdriana}%)`;
+  }
+}
+
 
 function enviarWhatsapp(mensaje) {
   const numeros = ["573219779439", "573157862008"];
