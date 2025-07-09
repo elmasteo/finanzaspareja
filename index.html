@@ -227,70 +227,55 @@ function renderGastos() {
   for (let gasto of gastos) {
     const div = document.createElement("div");
     div.className = "gasto-item";
-    div.setAttribute("data-autor", gasto.autor);
+    div.setAttribute("data-id", gasto.id);
 
-    const descEl = document.createElement("div");
-    descEl.contentEditable = true;
-    descEl.textContent = gasto.descripcion || '';
-    descEl.className = "editable descripcion";
-    descEl.onblur = () => editarCampo(gasto.id, "descripcion", descEl.textContent);
-
-    const montoEl = document.createElement("div");
-    montoEl.contentEditable = true;
-    montoEl.textContent = gasto.monto.toFixed(2);
-    montoEl.className = "editable monto";
-    montoEl.onblur = () => editarCampo(gasto.id, "monto", montoEl.textContent);
-
-    let detalle = '';
-    if (gasto.tipo === "total") {
-      if (gasto.autor === "Santiago") {
-        detalle = `Adriana debe a Santiago: $${gasto.monto}`;
-      } else {
-        detalle = `Santiago debe a Adriana: $${gasto.monto}`;
-      }
-    } else if (gasto.tipo === "mitad") {
-      const mitad = gasto.monto / 2;
-      detalle = `${gasto.autor} pagó $${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe $${mitad}`;
-    } else {
-      const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
-      const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
-      const debe = gasto.autor === "Santiago" ? a : s;
-      detalle = `${gasto.autor} pagó $${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe $${debe}`;
-    }
+    const editable = gasto.editando === true;
 
     div.innerHTML = `
-      <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
-      <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">🗑️</button>
-      <div class="desc">${detalle}</div>
+      <div class="acciones">
+        ${editable ? `
+          <button class="btn-guardar" onclick="guardarEdicion(${gasto.id})">✅</button>
+          <button class="btn-cancelar" onclick="cancelarEdicion(${gasto.id})">❌</button>
+        ` : `
+          <button class="btn-editar" onclick="iniciarEdicion(${gasto.id})">✏️</button>
+          <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
+          <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">🗑️</button>
+        `}
+      </div>
+      <div class="detalle">${getDetalleGasto(gasto)}</div>
+      <div class="contenido">
+        ${editable ? `
+          <input type="text" class="input-desc" value="${gasto.descripcion}">
+          <input type="number" class="input-monto" step="0.01" value="${gasto.monto}">
+        ` : `
+          <div><strong>${gasto.descripcion}</strong></div>
+          <div>$${gasto.monto.toFixed(2)}</div>
+        `}
+      </div>
+      <div class="meta">${gasto.fecha}</div>
     `;
-    div.appendChild(descEl);
-    div.appendChild(montoEl);
-    const meta = document.createElement("div");
-    meta.className = "meta";
-    meta.textContent = gasto.fecha;
-    div.appendChild(meta);
 
     cont.appendChild(div);
 
-    // Deuda acumulada
+    // Calcular deuda
     if (gasto.tipo === "total") {
       deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
     } else if (gasto.tipo === "mitad") {
       const mitad = gasto.monto / 2;
       deuda += gasto.autor === "Santiago" ? mitad : -mitad;
-    } else if (gasto.tipo === "porcentaje") {
-      const montoSantiago = (gasto.porcentajeSantiago / 100) * gasto.monto;
-      const montoAdriana = (gasto.porcentajeAdriana / 100) * gasto.monto;
-      const deberAdriana = gasto.autor === "Santiago" ? montoAdriana : -montoSantiago;
-      deuda += deberAdriana;
+    } else {
+      const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+      const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+      deuda += gasto.autor === "Santiago" ? a : -s;
     }
   }
 
   let texto = "Saldo balanceado";
-  if (deuda > 0.01) texto = `Adriana debe $${deuda} a Santiago`;
-  else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda)} a Adriana`;
+  if (deuda > 0.01) texto = `Adriana debe $${deuda.toFixed(2)} a Santiago`;
+  else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda).toFixed(2)} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
+
 
 function editarCampo(id, campo, valor) {
   const gasto = gastos.find(g => g.id === id);
@@ -491,6 +476,62 @@ function getDivisionDetalle(gasto) {
     return `Porcentaje – Santiago: $${s.toFixed(2)} / Adriana: $${a.toFixed(2)} (${gasto.porcentajeSantiago}% / ${gasto.porcentajeAdriana}%)`;
   }
 }
+
+function iniciarEdicion(id) {
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return;
+  gasto.editando = true;
+  renderGastos();
+}
+
+function cancelarEdicion(id) {
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return;
+  delete gasto.editando;
+  renderGastos();
+}
+
+function guardarEdicion(id) {
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return;
+
+  const div = document.querySelector(`[data-id='${id}']`);
+  const nuevaDesc = div.querySelector(".input-desc").value.trim();
+  const nuevoMonto = parseFloat(div.querySelector(".input-monto").value);
+
+  if (!nuevaDesc || isNaN(nuevoMonto) || nuevoMonto <= 0) {
+    alert("Campos inválidos");
+    return;
+  }
+
+  gasto.descripcion = nuevaDesc;
+  gasto.monto = nuevoMonto;
+  gasto.categoria = categorizarDescripcion(nuevaDesc);
+  delete gasto.editando;
+
+  guardarGastos();
+  renderGastos();
+
+  const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+  enviarWhatsapp(mensaje);
+}
+
+function getDetalleGasto(gasto) {
+  if (gasto.tipo === "total") {
+    return gasto.autor === "Santiago"
+      ? `Adriana debe a Santiago: $${gasto.monto}`
+      : `Santiago debe a Adriana: $${gasto.monto}`;
+  } else if (gasto.tipo === "mitad") {
+    const mitad = gasto.monto / 2;
+    return `${gasto.autor} pagó $${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe $${mitad}`;
+  } else {
+    const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+    const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+    const debe = gasto.autor === "Santiago" ? a : s;
+    return `${gasto.autor} pagó $${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe $${debe}`;
+  }
+}
+
 
 
 function enviarWhatsapp(mensaje) {

@@ -241,3 +241,31 @@ a > button:hover {
   background: #f0f0f0;
   cursor: text;
 }
+
+.gasto-item {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+  margin-bottom: 10px;
+}
+
+.gasto-item .acciones {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.gasto-item .contenido input {
+  padding: 4px;
+  margin-right: 8px;
+  font-size: 15px;
+}
+
+.gasto-item .btn-editar,
+.gasto-item .btn-guardar,
+.gasto-item .btn-cancelar {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+}
