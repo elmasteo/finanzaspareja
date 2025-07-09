@@ -136,6 +136,13 @@ init();
     });
   }
 
+  const formatoCOP = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' });
+
+// Redefinir la función que convierte a formato peso colombiano
+function formatearCOP(valor) {
+  return formatoCOP.format(valor);
+}
+
   function agregarGasto() {
 
     const autor = document.getElementById("autor").value;
@@ -246,10 +253,10 @@ function renderGastos() {
       <div class="contenido">
         ${editable ? `
           <input type="text" class="input-desc" value="${gasto.descripcion}">
-          <input type="number" class="input-monto" step="0.01" value="${gasto.monto}">
+          <input type="number" class="input-monto" step="0.01" value="${formatearCOP(gasto.monto)}">
         ` : `
           <div><strong>${gasto.descripcion}</strong></div>
-          <div>$${gasto.monto.toFixed(2)}</div>
+          <div>$${formatearCOP(gasto.monto)}</div>
         `}
       </div>
       <div class="meta">${gasto.fecha}</div>
@@ -271,8 +278,8 @@ function renderGastos() {
   }
 
   let texto = "Saldo balanceado";
-  if (deuda > 0.01) texto = `Adriana debe $${deuda.toFixed(2)} a Santiago`;
-  else if (deuda < -0.01) texto = `Santiago debe $${Math.abs(deuda).toFixed(2)} a Adriana`;
+  if (deuda > 0.01) texto = `Adriana debe $${formatearCOP(Math.abs(deuda))} a Santiago`;
+  else if (deuda < -0.01) texto = `Santiago debe $${formatearCOP(Math.abs(deuda))} a Adriana`;
   document.getElementById("saldoTexto").textContent = texto;
 }
 
@@ -297,7 +304,7 @@ function editarCampo(id, campo, valor) {
   guardarGastos();
   renderGastos();
 
-  const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+  const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: $${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
   enviarWhatsapp(mensaje);
 }
 
@@ -333,7 +340,7 @@ function editarGasto(id) {
   guardarGastos();
   renderGastos();
 
-  const mensaje = `🔄 Se ha actualizado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+  const mensaje = `🔄 Se ha actualizado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
   enviarWhatsapp(mensaje);
 }
 
@@ -347,7 +354,7 @@ async function eliminarGasto(id) {
   await guardarGastos();
   renderGastos();
 
-  const mensaje = `❌ Se eliminó un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}`;
+  const mensaje = `❌ Se eliminó un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}`;
   enviarWhatsapp(mensaje);
 }
 
@@ -369,8 +376,8 @@ function obtenerTextoDeudaActual() {
   }
 
   if (Math.abs(deuda) < 0.01) return "Saldo balanceado";
-  if (deuda > 0.01) return `Adriana debe $${deuda.toFixed(2)} a Santiago`;
-  return `Santiago debe $${Math.abs(deuda).toFixed(2)} a Adriana`;
+  if (deuda > 0.01) return `Adriana debe $${formatearCOP(deuda)} a Santiago`;
+  return `Santiago debe $${formatearCOP(Math.abs(deuda))} a Adriana`;
 }
 
 
@@ -397,7 +404,7 @@ async function liquidarGasto(id) {
   });
 
   // Enviar notificación WhatsApp
-  const mensaje = `🔔 Se ha liquidado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
+  const mensaje = `🔔 Se ha liquidado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: $${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
   enviarWhatsapp(mensaje);
 
   // Eliminar gasto de lista y guardar
@@ -466,14 +473,14 @@ function getDivisionDetalle(gasto) {
     return `Mitad y mitad – $${mitad.toFixed(2)} para cada uno`;
   } else if (gasto.tipo === "total") {
     if (gasto.autor === "Santiago") {
-      return `Santiago pagó el total – Adriana debe $${gasto.monto.toFixed(2)}`;
+      return `Santiago pagó el total – Adriana debe $${formatearCOP(gasto.monto)}`;
     } else {
-      return `Adriana pagó el total – Santiago debe $${gasto.monto.toFixed(2)}`;
+      return `Adriana pagó el total – Santiago debe $${formatearCOP(gasto.monto)}`;
     }
   } else {
     const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
     const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
-    return `Porcentaje – Santiago: $${s.toFixed(2)} / Adriana: $${a.toFixed(2)} (${gasto.porcentajeSantiago}% / ${gasto.porcentajeAdriana}%)`;
+    return `Porcentaje – Santiago: $${formatearCOP(s)} / Adriana: $${formatearCOP(a)} (${gasto.porcentajeSantiago}% / ${gasto.porcentajeAdriana}%)`;
   }
 }
 
@@ -512,7 +519,7 @@ function guardarEdicion(id) {
   guardarGastos();
   renderGastos();
 
-  const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: $${gasto.monto}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+  const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: $${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
   enviarWhatsapp(mensaje);
 }
 
