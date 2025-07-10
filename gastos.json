@@ -43,6 +43,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-07-08",
       "categoria": "Otros"
+    },
+    {
+      "id": 1752180694136,
+      "autor": "Santiago",
+      "descripcion": "Boleta rifa - Yaneth",
+      "monto": 20000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-07-10",
+      "categoria": "Otros"
     }
   ]
 }
