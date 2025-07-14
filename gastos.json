@@ -65,6 +65,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-07-11",
       "categoria": "Otros"
+    },
+    {
+      "id": 1752507616791,
+      "autor": "Santiago",
+      "descripcion": "Arreglo lavadora",
+      "monto": 90000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-07-14",
+      "categoria": "Otros"
     }
   ]
 }
