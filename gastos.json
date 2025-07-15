@@ -76,17 +76,6 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-07-14",
       "categoria": "Otros"
-    },
-    {
-      "id": 1752536821269,
-      "autor": "Santiago",
-      "descripcion": "Empanadas",
-      "monto": 11000,
-      "tipo": "total",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-07-14",
-      "categoria": "Comida"
     }
   ]
 }
