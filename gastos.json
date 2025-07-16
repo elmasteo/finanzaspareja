@@ -98,6 +98,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-07-16",
       "categoria": "Otros"
+    },
+    {
+      "id": 1752697177255,
+      "autor": "Adriana",
+      "descripcion": "hotel barato",
+      "monto": 347300,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-07-16",
+      "categoria": "Entretenimiento"
     }
   ]
 }
