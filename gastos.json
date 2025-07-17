@@ -109,6 +109,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-07-16",
       "categoria": "Entretenimiento"
+    },
+    {
+      "id": 1752781898556,
+      "autor": "Santiago",
+      "descripcion": "Silla Escritorio",
+      "monto": 200000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-07-17",
+      "categoria": "Otros"
     }
   ]
 }
