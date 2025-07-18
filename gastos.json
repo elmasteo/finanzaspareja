@@ -131,6 +131,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-07-18",
       "categoria": "Otros"
+    },
+    {
+      "id": 1752799198589,
+      "autor": "Adriana",
+      "descripcion": "Gafas",
+      "monto": 42700,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-07-18",
+      "categoria": "Otros"
     }
   ]
 }
