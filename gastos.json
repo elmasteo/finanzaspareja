@@ -120,6 +120,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-07-17",
       "categoria": "Otros"
+    },
+    {
+      "id": 1752798333799,
+      "autor": "Santiago",
+      "descripcion": "Tour- Separado Cancún",
+      "monto": 285400,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-07-18",
+      "categoria": "Otros"
     }
   ]
 }
