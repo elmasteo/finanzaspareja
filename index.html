@@ -470,7 +470,7 @@ async function verLiquidaciones() {
 function getDivisionDetalle(gasto) {
   if (gasto.tipo === "mitad") {
     const mitad = gasto.monto / 2;
-    return `Mitad y mitad – ${mitad.toFixed(2)} para cada uno`;
+    return `Mitad y mitad – ${formatearCOP(mitad)} para cada uno`;
   } else if (gasto.tipo === "total") {
     if (gasto.autor === "Santiago") {
       return `Santiago pagó el total – Adriana debe ${formatearCOP(gasto.monto)}`;
