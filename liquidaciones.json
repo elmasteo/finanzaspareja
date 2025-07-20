@@ -364,5 +364,197 @@
         "categoria": "Otros"
       }
     ]
+  },
+  {
+    "fecha": "2025-07-20",
+    "gastos": [
+      {
+        "id": 1751906026721,
+        "autor": "Adriana",
+        "descripcion": "Refractaria",
+        "monto": 32000,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-07",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1751906052483,
+        "autor": "Adriana",
+        "descripcion": "Carne",
+        "monto": 24000,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-07",
+        "categoria": "Comida"
+      },
+      {
+        "id": 1752015961423,
+        "autor": "Adriana",
+        "descripcion": "Sombrilla",
+        "monto": 32000,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-08",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752016022430,
+        "autor": "Adriana",
+        "descripcion": "Cubreecho",
+        "monto": 187200,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-08",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752180694136,
+        "autor": "Santiago",
+        "descripcion": "Boleta rifa - Yaneth",
+        "monto": 20000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-10",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752272464009,
+        "autor": "Adriana",
+        "descripcion": "Pintura puerta",
+        "monto": 20000,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-11",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752507616791,
+        "autor": "Santiago",
+        "descripcion": "Arreglo lavadora",
+        "monto": 90000,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-14",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752541927831,
+        "autor": "Adriana",
+        "descripcion": "Empanadas",
+        "monto": 11000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-15",
+        "categoria": "Comida"
+      },
+      {
+        "id": 1752625812885,
+        "autor": "Adriana",
+        "descripcion": "Silla Escritorio",
+        "monto": 390000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-16",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752697177255,
+        "autor": "Adriana",
+        "descripcion": "hotel barato",
+        "monto": 347300,
+        "tipo": "mitad",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-16",
+        "categoria": "Entretenimiento"
+      },
+      {
+        "id": 1752781898556,
+        "autor": "Santiago",
+        "descripcion": "Silla Escritorio",
+        "monto": 200000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-17",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752798333799,
+        "autor": "Santiago",
+        "descripcion": "Tour- Separado Cancún",
+        "monto": 285400,
+        "tipo": "mitad",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-18",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1752799198589,
+        "autor": "Adriana",
+        "descripcion": "Gafas",
+        "monto": 42700,
+        "tipo": "mitad",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-18",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1753044934016,
+        "autor": "Santiago",
+        "descripcion": "Droguería - bloqueador - listerine",
+        "monto": 87300,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 45,
+        "porcentajeAdriana": 55,
+        "fecha": "2025-07-20",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1753044960875,
+        "autor": "Santiago",
+        "descripcion": "Cama parte 1",
+        "monto": 450000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-20",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1753044999519,
+        "autor": "Adriana",
+        "descripcion": "Cambio divisa",
+        "monto": 2000000,
+        "tipo": "mitad",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-20",
+        "categoria": "Otros"
+      },
+      {
+        "id": 1753045013170,
+        "autor": "Santiago",
+        "descripcion": "Cambio divisa",
+        "monto": 70000,
+        "tipo": "mitad",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2025-07-20",
+        "categoria": "Otros"
+      }
+    ]
   }
 ]
