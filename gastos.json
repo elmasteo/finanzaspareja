@@ -10,6 +10,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-07-27",
       "categoria": "Entretenimiento"
+    },
+    {
+      "id": 1753635649273,
+      "autor": "Santiago",
+      "descripcion": "Carreta de mano",
+      "monto": 60000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-07-27",
+      "categoria": "Otros"
     }
   ]
 }
