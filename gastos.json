@@ -76,6 +76,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-08-13",
       "categoria": "Otros"
+    },
+    {
+      "id": 1755043842368,
+      "autor": "Adriana",
+      "descripcion": "Audífonos",
+      "monto": 400000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-13",
+      "categoria": "Tecnologia"
     }
   ]
 }
