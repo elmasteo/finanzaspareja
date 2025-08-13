@@ -65,6 +65,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-08-13",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1755043817901,
+      "autor": "Adriana",
+      "descripcion": "Vuelo Avianca",
+      "monto": 560000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-13",
+      "categoria": "Otros"
     }
   ]
 }
