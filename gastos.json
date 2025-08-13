@@ -98,6 +98,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-08-13",
       "categoria": "Otros"
+    },
+    {
+      "id": 1755044228406,
+      "autor": "Adriana",
+      "descripcion": "compra aeropuerto",
+      "monto": 30100,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-13",
+      "categoria": "Otros"
     }
   ]
 }
