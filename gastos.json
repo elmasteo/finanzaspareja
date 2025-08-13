@@ -87,6 +87,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-08-13",
       "categoria": "Otros"
+    },
+    {
+      "id": 1755044135090,
+      "autor": "Adriana",
+      "descripcion": "oxxo",
+      "monto": 16521,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-13",
+      "categoria": "Otros"
     }
   ]
 }
