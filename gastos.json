@@ -70,7 +70,7 @@
       "id": 1755043842368,
       "autor": "Adriana",
       "descripcion": "Audífonos",
-      "monto": 400000,
+      "monto": 405640,
       "tipo": "mitad",
       "porcentajeSantiago": 50,
       "porcentajeAdriana": 50,
@@ -78,7 +78,7 @@
       "categoria": "Tecnologia"
     },
     {
-      "id": 1755044108576,
+      "id": 1755044107698,
       "autor": "Adriana",
       "descripcion": "vuelos avianca",
       "monto": 1324400,
@@ -89,7 +89,7 @@
       "categoria": "Otros"
     },
     {
-      "id": 1755044135090,
+      "id": 1755044134656,
       "autor": "Adriana",
       "descripcion": "oxxo",
       "monto": 16521,
