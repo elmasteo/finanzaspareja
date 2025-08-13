@@ -76,6 +76,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-08-13",
       "categoria": "Tecnologia"
+    },
+    {
+      "id": 1755044108576,
+      "autor": "Adriana",
+      "descripcion": "vuelos avianca",
+      "monto": 1324400,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-13",
+      "categoria": "Otros"
     }
   ]
 }
