@@ -131,6 +131,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-08-17",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1755396279675,
+      "autor": "Adriana",
+      "descripcion": "Mercado carne",
+      "monto": 209500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-08-17",
+      "categoria": "Comida"
     }
   ]
 }
