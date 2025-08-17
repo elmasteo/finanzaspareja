@@ -142,6 +142,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-08-17",
       "categoria": "Comida"
+    },
+    {
+      "id": 1755396295478,
+      "autor": "Adriana",
+      "descripcion": "Mercado fruver",
+      "monto": 194150,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-08-17",
+      "categoria": "Hogar"
     }
   ]
 }
