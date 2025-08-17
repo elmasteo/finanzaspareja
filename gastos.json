@@ -120,6 +120,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-08-17",
       "categoria": "Otros"
+    },
+    {
+      "id": 1755396261059,
+      "autor": "Adriana",
+      "descripcion": "Mercado D1",
+      "monto": 152390,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-08-17",
+      "categoria": "Hogar"
     }
   ]
 }
