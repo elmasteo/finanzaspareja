@@ -153,6 +153,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-08-17",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1755396309785,
+      "autor": "Adriana",
+      "descripcion": "Mercado Ara",
+      "monto": 529071,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-08-17",
+      "categoria": "Hogar"
     }
   ]
 }
