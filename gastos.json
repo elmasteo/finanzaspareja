@@ -164,6 +164,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-08-17",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1755396367208,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo Mexicano",
+      "monto": 257000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-17",
+      "categoria": "Comida"
     }
   ]
 }
