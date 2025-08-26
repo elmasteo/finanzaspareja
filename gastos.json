@@ -1,15 +1,3 @@
 {
-  "gastos": [
-    {
-      "id": 1756223206628,
-      "autor": "Adriana",
-      "descripcion": "Parqueadero",
-      "monto": 120000,
-      "tipo": "mitad",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-08-26",
-      "categoria": "Transporte"
-    }
-  ]
+  "gastos": []
 }
