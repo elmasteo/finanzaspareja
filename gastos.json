@@ -43,6 +43,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-08-30",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1756601316637,
+      "autor": "Adriana",
+      "descripcion": "Naranja",
+      "monto": 15000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-08-31",
+      "categoria": "Otros"
     }
   ]
 }
