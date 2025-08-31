@@ -54,6 +54,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-08-31",
       "categoria": "Otros"
+    },
+    {
+      "id": 1756601356780,
+      "autor": "Adriana",
+      "descripcion": "Medicamentos suegra",
+      "monto": 63750,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-08-31",
+      "categoria": "Otros"
     }
   ]
 }
