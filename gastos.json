@@ -76,6 +76,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-09-01",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1756770474601,
+      "autor": "Adriana",
+      "descripcion": "Postre",
+      "monto": 5000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-09-01",
+      "categoria": "Otros"
     }
   ]
 }
