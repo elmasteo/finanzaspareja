@@ -109,6 +109,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-09-04",
       "categoria": "Otros"
+    },
+    {
+      "id": 1756958570616,
+      "autor": "Adriana",
+      "descripcion": "Barberia",
+      "monto": 20000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-09-04",
+      "categoria": "Entretenimiento"
     }
   ]
 }
