@@ -136,7 +136,7 @@
       "id": 1757610874901,
       "autor": "Adriana",
       "descripcion": "Ara",
-      "monto": 192000,
+      "monto": 592000,
       "tipo": "porcentaje",
       "porcentajeSantiago": 45,
       "porcentajeAdriana": 55,
@@ -144,7 +144,7 @@
       "categoria": "Otros"
     },
     {
-      "id": 1757623095384,
+      "id": 1757623094196,
       "autor": "Santiago",
       "descripcion": "Almuerzo Crepes",
       "monto": 132000,
