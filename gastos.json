@@ -120,6 +120,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-09-04",
       "categoria": "Entretenimiento"
+    },
+    {
+      "id": 1757610848672,
+      "autor": "Adriana",
+      "descripcion": "Fruver",
+      "monto": 144050,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-09-11",
+      "categoria": "Hogar"
     }
   ]
 }
