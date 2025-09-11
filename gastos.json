@@ -131,6 +131,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-09-11",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1757610874901,
+      "autor": "Adriana",
+      "descripcion": "Ara",
+      "monto": 192000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-09-11",
+      "categoria": "Otros"
     }
   ]
 }
