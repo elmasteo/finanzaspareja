@@ -164,6 +164,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-09-11",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1757724377061,
+      "autor": "Adriana",
+      "descripcion": "Ducha",
+      "monto": 54000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-09-13",
+      "categoria": "Otros"
     }
   ]
 }
