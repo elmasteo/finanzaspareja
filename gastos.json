@@ -1,3 +1,15 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1758857612336,
+      "autor": "Adriana",
+      "descripcion": "Empanadas",
+      "monto": 21300,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-09-26",
+      "categoria": "Comida"
+    }
+  ]
 }
