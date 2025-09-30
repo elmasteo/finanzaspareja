@@ -43,6 +43,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-09-30",
       "categoria": "Otros"
+    },
+    {
+      "id": 1759268010252,
+      "autor": "Adriana",
+      "descripcion": "Protector",
+      "monto": 65000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 60,
+      "porcentajeAdriana": 40,
+      "fecha": "2025-09-30",
+      "categoria": "Otros"
     }
   ]
 }
