@@ -32,6 +32,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-09-26",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1759267967113,
+      "autor": "Adriana",
+      "descripcion": "Notario",
+      "monto": 100000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-09-30",
+      "categoria": "Otros"
     }
   ]
 }
