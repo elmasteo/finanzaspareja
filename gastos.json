@@ -54,6 +54,17 @@
       "porcentajeAdriana": 60,
       "fecha": "2025-09-30",
       "categoria": "Otros"
+    },
+    {
+      "id": 1759276836840,
+      "autor": "Adriana",
+      "descripcion": "Mercado pequeño",
+      "monto": 48800,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-10-01",
+      "categoria": "Hogar"
     }
   ]
 }
