@@ -76,6 +76,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-10-01",
       "categoria": "Comida"
+    },
+    {
+      "id": 1759433260864,
+      "autor": "Santiago",
+      "descripcion": "Office PC tía",
+      "monto": 35000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-10-02",
+      "categoria": "Otros"
     }
   ]
 }
