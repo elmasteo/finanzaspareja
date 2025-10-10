@@ -142,6 +142,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-10-08",
       "categoria": "Otros"
+    },
+    {
+      "id": 1760139053473,
+      "autor": "Adriana",
+      "descripcion": "Préstamo",
+      "monto": 100000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-10-10",
+      "categoria": "Otros"
     }
   ]
 }
