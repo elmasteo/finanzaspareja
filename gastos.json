@@ -166,17 +166,6 @@
       "categoria": "Transporte"
     },
     {
-      "id": 1760394832373,
-      "autor": "Adriana",
-      "descripcion": "Uber suegros",
-      "monto": 7100,
-      "tipo": "mitad",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2025-10-13",
-      "categoria": "Transporte"
-    },
-    {
       "id": 1760394850050,
       "autor": "Adriana",
       "descripcion": "Uber cancha",
