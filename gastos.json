@@ -208,6 +208,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-10-13",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1760394952185,
+      "autor": "Adriana",
+      "descripcion": "Guayabal",
+      "monto": 30000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-10-13",
+      "categoria": "Otros"
     }
   ]
 }
