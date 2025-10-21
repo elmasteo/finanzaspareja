@@ -197,6 +197,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-10-21",
       "categoria": "Otros"
+    },
+    {
+      "id": 1761059561629,
+      "autor": "Santiago",
+      "descripcion": "Parqueadero",
+      "monto": 60000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-10-21",
+      "categoria": "Transporte"
     }
   ]
 }
