@@ -208,6 +208,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-10-21",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1761145454573,
+      "autor": "Santiago",
+      "descripcion": "Boletas mundo aventura",
+      "monto": 146000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-10-22",
+      "categoria": "Otros"
     }
   ]
 }
