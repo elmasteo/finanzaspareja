@@ -241,6 +241,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-10-30",
       "categoria": "Comida"
+    },
+    {
+      "id": 1761785017562,
+      "autor": "Adriana",
+      "descripcion": "Cafe",
+      "monto": 51900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-10-30",
+      "categoria": "Otros"
     }
   ]
 }
