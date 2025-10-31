@@ -263,6 +263,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-10-30",
       "categoria": "Comida"
+    },
+    {
+      "id": 1761875711293,
+      "autor": "Santiago",
+      "descripcion": "Ganchos",
+      "monto": 26000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-10-31",
+      "categoria": "Otros"
     }
   ]
 }
