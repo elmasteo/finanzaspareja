@@ -285,6 +285,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-11-01",
       "categoria": "Otros"
+    },
+    {
+      "id": 1761968024637,
+      "autor": "Adriana",
+      "descripcion": "Dolarcity",
+      "monto": 107000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-11-01",
+      "categoria": "Otros"
     }
   ]
 }
