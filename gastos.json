@@ -296,6 +296,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-03",
       "categoria": "Comida"
+    },
+    {
+      "id": 1762206836584,
+      "autor": "Adriana",
+      "descripcion": "D1",
+      "monto": 80040,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-11-03",
+      "categoria": "Hogar"
     }
   ]
 }
