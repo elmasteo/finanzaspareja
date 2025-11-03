@@ -285,6 +285,17 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-11-01",
       "categoria": "Otros"
+    },
+    {
+      "id": 1762204634409,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo",
+      "monto": 180200,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-11-03",
+      "categoria": "Comida"
     }
   ]
 }
