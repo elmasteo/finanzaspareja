@@ -329,17 +329,6 @@
       "porcentajeAdriana": 55,
       "fecha": "2025-11-03",
       "categoria": "Otros"
-    },
-    {
-      "id": 1762529251146,
-      "autor": "Adriana",
-      "descripcion": "Desayuno",
-      "monto": 5000,
-      "tipo": "porcentaje",
-      "porcentajeSantiago": 45,
-      "porcentajeAdriana": 55,
-      "fecha": "2025-11-07",
-      "categoria": "Comida"
     }
   ]
 }
