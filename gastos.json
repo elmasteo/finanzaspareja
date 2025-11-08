@@ -340,6 +340,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-07",
       "categoria": "Otros"
+    },
+    {
+      "id": 1762561490598,
+      "autor": "Adriana",
+      "descripcion": "Uber a mateo",
+      "monto": 25900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-11-08",
+      "categoria": "Transporte"
     }
   ]
 }
