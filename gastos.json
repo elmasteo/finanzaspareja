@@ -362,6 +362,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-11",
       "categoria": "Otros"
+    },
+    {
+      "id": 1763131700628,
+      "autor": "Adriana",
+      "descripcion": "Shein",
+      "monto": 347127,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-11-14",
+      "categoria": "Otros"
     }
   ]
 }
