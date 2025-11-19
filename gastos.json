@@ -373,6 +373,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-14",
       "categoria": "Otros"
+    },
+    {
+      "id": 1763518044458,
+      "autor": "Santiago",
+      "descripcion": "Mercado - Carne",
+      "monto": 267750,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 45,
+      "porcentajeAdriana": 55,
+      "fecha": "2025-11-19",
+      "categoria": "Comida"
     }
   ]
 }
