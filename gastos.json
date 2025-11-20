@@ -428,6 +428,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2025-11-20",
       "categoria": "Otros"
+    },
+    {
+      "id": 1763606058505,
+      "autor": "Adriana",
+      "descripcion": "Banditas",
+      "monto": 29800,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2025-11-20",
+      "categoria": "Otros"
     }
   ]
 }
