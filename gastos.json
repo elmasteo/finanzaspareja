@@ -406,6 +406,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-20",
       "categoria": "Comida"
+    },
+    {
+      "id": 1763605726873,
+      "autor": "Santiago",
+      "descripcion": "Dollarcity",
+      "monto": 38000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2025-11-20",
+      "categoria": "Otros"
     }
   ]
 }
