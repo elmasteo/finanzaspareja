@@ -417,6 +417,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2025-11-20",
       "categoria": "Otros"
+    },
+    {
+      "id": 1763605754550,
+      "autor": "Santiago",
+      "descripcion": "Listerine",
+      "monto": 41000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2025-11-20",
+      "categoria": "Otros"
     }
   ]
 }
