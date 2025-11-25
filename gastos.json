@@ -439,6 +439,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2025-11-20",
       "categoria": "Otros"
+    },
+    {
+      "id": 1764106782482,
+      "autor": "Adriana",
+      "descripcion": "Dólar ity",
+      "monto": 11500,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-11-25",
+      "categoria": "Otros"
     }
   ]
 }
