@@ -461,6 +461,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-26",
       "categoria": "Otros"
+    },
+    {
+      "id": 1764204350306,
+      "autor": "Adriana",
+      "descripcion": "Gaseosa mateo",
+      "monto": 6000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-11-27",
+      "categoria": "Servicios"
     }
   ]
 }
