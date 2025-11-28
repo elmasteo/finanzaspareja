@@ -472,6 +472,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-27",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1764338715823,
+      "autor": "Adriana",
+      "descripcion": "Psicilago",
+      "monto": 95300,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-11-28",
+      "categoria": "Otros"
     }
   ]
 }
