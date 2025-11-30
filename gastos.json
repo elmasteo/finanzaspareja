@@ -505,6 +505,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2025-11-30",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1764544033826,
+      "autor": "Adriana",
+      "descripcion": "Postre",
+      "monto": 4000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-11-30",
+      "categoria": "Otros"
     }
   ]
 }
