@@ -494,6 +494,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-11-28",
       "categoria": "Otros"
+    },
+    {
+      "id": 1764544006570,
+      "autor": "Adriana",
+      "descripcion": "D1",
+      "monto": 98570,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2025-11-30",
+      "categoria": "Hogar"
     }
   ]
 }
