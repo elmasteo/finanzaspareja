@@ -527,6 +527,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-12-03",
       "categoria": "Comida"
+    },
+    {
+      "id": 1764872521758,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo-Pollo",
+      "monto": 34000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-12-04",
+      "categoria": "Comida"
     }
   ]
 }
