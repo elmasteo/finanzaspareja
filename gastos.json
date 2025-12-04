@@ -538,6 +538,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-12-04",
       "categoria": "Comida"
+    },
+    {
+      "id": 1764891702910,
+      "autor": "Adriana",
+      "descripcion": "Mercado D1",
+      "monto": 66600,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2025-12-04",
+      "categoria": "Hogar"
     }
   ]
 }
