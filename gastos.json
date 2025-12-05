@@ -549,6 +549,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2025-12-04",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1764941977262,
+      "autor": "Adriana",
+      "descripcion": "Panadería",
+      "monto": 4000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2025-12-05",
+      "categoria": "Otros"
     }
   ]
 }
