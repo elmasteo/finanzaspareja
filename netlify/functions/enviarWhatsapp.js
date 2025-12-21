@@ -7,7 +7,7 @@ exports.handler = async (event) => {
 
   const { number, text } = JSON.parse(event.body);
 
-  const response = await fetch("https://ip-172-31-43-210.tailf8b5ff.ts.net/message/sendText/misFinanzas", {
+  const response = await fetch("https://ip-172-31-43-210.taile4b68d.ts.net/message/sendText/misFinanzas", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
