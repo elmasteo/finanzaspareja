@@ -659,6 +659,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-01-08",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1767835749287,
+      "autor": "Adriana",
+      "descripcion": "Guayabal Mercado",
+      "monto": 80000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-08",
+      "categoria": "Hogar"
     }
   ]
 }
