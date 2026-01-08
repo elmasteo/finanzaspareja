@@ -648,6 +648,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2025-12-31",
       "categoria": "Otros"
+    },
+    {
+      "id": 1767835437963,
+      "autor": "Santiago",
+      "descripcion": "Mercado Ara D1 Ricaurte",
+      "monto": 547120,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-01-08",
+      "categoria": "Hogar"
     }
   ]
 }
