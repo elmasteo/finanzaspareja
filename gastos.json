@@ -681,6 +681,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-08",
       "categoria": "Otros"
+    },
+    {
+      "id": 1767922216194,
+      "autor": "Santiago",
+      "descripcion": "Mercado Plaza Carne",
+      "monto": 217700,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-01-09",
+      "categoria": "Comida"
     }
   ]
 }
