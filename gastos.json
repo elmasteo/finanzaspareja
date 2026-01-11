@@ -692,6 +692,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-01-09",
       "categoria": "Comida"
+    },
+    {
+      "id": 1768161661946,
+      "autor": "Adriana",
+      "descripcion": "Ferretería",
+      "monto": 64000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-01-11",
+      "categoria": "Otros"
     }
   ]
 }
