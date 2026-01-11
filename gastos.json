@@ -692,6 +692,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-01-09",
       "categoria": "Comida"
+    },
+    {
+      "id": 1768154955163,
+      "autor": "Adriana",
+      "descripcion": "Agua",
+      "monto": 64000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 53,
+      "porcentajeAdriana": 47,
+      "fecha": "2026-01-11",
+      "categoria": "Servicios"
     }
   ]
 }
