@@ -714,6 +714,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-12",
       "categoria": "Tecnologia"
+    },
+    {
+      "id": 1768256618987,
+      "autor": "Santiago",
+      "descripcion": "Droguería",
+      "monto": 222600,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-01-12",
+      "categoria": "Otros"
     }
   ]
 }
