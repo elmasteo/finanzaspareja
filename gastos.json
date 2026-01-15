@@ -725,6 +725,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-01-12",
       "categoria": "Otros"
+    },
+    {
+      "id": 1768518659770,
+      "autor": "Adriana",
+      "descripcion": "Boda",
+      "monto": 10077520,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-15",
+      "categoria": "Otros"
     }
   ]
 }
