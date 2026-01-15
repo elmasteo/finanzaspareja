@@ -736,6 +736,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-15",
       "categoria": "Otros"
+    },
+    {
+      "id": 1768520230403,
+      "autor": "Santiago",
+      "descripcion": "Abono Fotógrafo",
+      "monto": 200000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-15",
+      "categoria": "Otros"
     }
   ]
 }
