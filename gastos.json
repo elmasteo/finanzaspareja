@@ -769,6 +769,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-18",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1768696612854,
+      "autor": "Santiago",
+      "descripcion": "Cosas casa",
+      "monto": 11500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-01-18",
+      "categoria": "Otros"
     }
   ]
 }
