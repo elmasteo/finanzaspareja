@@ -747,6 +747,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-15",
       "categoria": "Otros"
+    },
+    {
+      "id": 1768696421480,
+      "autor": "Santiago",
+      "descripcion": "Cositas mias",
+      "monto": 31500,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-18",
+      "categoria": "Otros"
     }
   ]
 }
