@@ -791,6 +791,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-18",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1768783497320,
+      "autor": "Adriana",
+      "descripcion": "Burrito",
+      "monto": 48200,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-19",
+      "categoria": "Otros"
     }
   ]
 }
