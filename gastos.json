@@ -835,6 +835,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-01-19",
       "categoria": "Otros"
+    },
+    {
+      "id": 1769107053918,
+      "autor": "Santiago",
+      "descripcion": "Uber",
+      "monto": 10465,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-22",
+      "categoria": "Transporte"
     }
   ]
 }
