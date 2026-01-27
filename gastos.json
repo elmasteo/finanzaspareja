@@ -879,6 +879,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-23",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1769544015935,
+      "autor": "Santiago",
+      "descripcion": "Anillos 💍",
+      "monto": 300000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-01-27",
+      "categoria": "Otros"
     }
   ]
 }
