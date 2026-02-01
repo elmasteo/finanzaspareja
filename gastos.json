@@ -890,6 +890,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-01-27",
       "categoria": "Otros"
+    },
+    {
+      "id": 1769906376289,
+      "autor": "Santiago",
+      "descripcion": "Aporte Crédito Hipotecario",
+      "monto": 8000000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-02-01",
+      "categoria": "Otros"
     }
   ]
 }
