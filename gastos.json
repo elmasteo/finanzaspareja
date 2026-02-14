@@ -901,6 +901,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-02-01",
       "categoria": "Otros"
+    },
+    {
+      "id": 1771081169190,
+      "autor": "Adriana",
+      "descripcion": "Ara",
+      "monto": 485000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-02-14",
+      "categoria": "Otros"
     }
   ]
 }
