@@ -1,3 +1,15 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1771198224940,
+      "autor": "Santiago",
+      "descripcion": "Dollarcity",
+      "monto": 96500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-02-15",
+      "categoria": "Otros"
+    }
+  ]
 }
