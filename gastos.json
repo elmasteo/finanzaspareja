@@ -43,6 +43,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-02-24",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1771899250460,
+      "autor": "Santiago",
+      "descripcion": "Ferretería",
+      "monto": 44000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-02-24",
+      "categoria": "Otros"
     }
   ]
 }
