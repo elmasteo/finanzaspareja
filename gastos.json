@@ -54,6 +54,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-02-24",
       "categoria": "Otros"
+    },
+    {
+      "id": 1771900355984,
+      "autor": "Santiago",
+      "descripcion": "Impuesto Predial",
+      "monto": 490000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-02-24",
+      "categoria": "Otros"
     }
   ]
 }
