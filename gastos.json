@@ -109,6 +109,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-03-16",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1773625211317,
+      "autor": "Santiago",
+      "descripcion": "Champaña",
+      "monto": 282000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-16",
+      "categoria": "Otros"
     }
   ]
 }
