@@ -131,6 +131,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-03-16",
       "categoria": "Otros"
+    },
+    {
+      "id": 1773625245935,
+      "autor": "Adriana",
+      "descripcion": "Ron",
+      "monto": 201500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-16",
+      "categoria": "Otros"
     }
   ]
 }
