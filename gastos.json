@@ -120,6 +120,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-03-16",
       "categoria": "Otros"
+    },
+    {
+      "id": 1773625230129,
+      "autor": "Santiago",
+      "descripcion": "Vodka",
+      "monto": 239700,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-16",
+      "categoria": "Otros"
     }
   ]
 }
