@@ -153,6 +153,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-03-16",
       "categoria": "Comida"
+    },
+    {
+      "id": 1773805557775,
+      "autor": "Santiago",
+      "descripcion": "Exito",
+      "monto": 87400,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-18",
+      "categoria": "Hogar"
     }
   ]
 }
