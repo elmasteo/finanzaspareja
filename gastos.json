@@ -10,6 +10,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-03-19",
       "categoria": "Otros"
+    },
+    {
+      "id": 1773946720708,
+      "autor": "Adriana",
+      "descripcion": "Vitaminas",
+      "monto": 118900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-19",
+      "categoria": "Otros"
     }
   ]
 }
