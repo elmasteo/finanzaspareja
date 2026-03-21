@@ -21,6 +21,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-03-19",
       "categoria": "Otros"
+    },
+    {
+      "id": 1774102449212,
+      "autor": "Adriana",
+      "descripcion": "Uber Notaria",
+      "monto": 23000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-21",
+      "categoria": "Transporte"
     }
   ]
 }
