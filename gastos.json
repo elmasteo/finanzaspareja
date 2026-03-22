@@ -54,6 +54,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-03-21",
       "categoria": "Otros"
+    },
+    {
+      "id": 1774145417711,
+      "autor": "Santiago",
+      "descripcion": "Notario",
+      "monto": 432000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-03-22",
+      "categoria": "Otros"
     }
   ]
 }
