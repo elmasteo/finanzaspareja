@@ -76,6 +76,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-03-24",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1774494057958,
+      "autor": "Santiago",
+      "descripcion": "Cota Banco",
+      "monto": 400000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-03-26",
+      "categoria": "Otros"
     }
   ]
 }
