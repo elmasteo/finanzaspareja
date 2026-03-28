@@ -120,6 +120,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-03-28",
       "categoria": "Otros"
+    },
+    {
+      "id": 1774734536478,
+      "autor": "Adriana",
+      "descripcion": "Fotógrafo",
+      "monto": 600000,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-03-28",
+      "categoria": "Otros"
     }
   ]
 }
