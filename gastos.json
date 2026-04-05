@@ -142,6 +142,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-04-05",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1775419100696,
+      "autor": "Santiago",
+      "descripcion": "Airbnb Cartagena",
+      "monto": 92272,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-05",
+      "categoria": "Otros"
     }
   ]
 }
