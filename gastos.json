@@ -153,6 +153,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-04-05",
       "categoria": "Otros"
+    },
+    {
+      "id": 1775438477206,
+      "autor": "Santiago",
+      "descripcion": "Arepa- Hamburguesa",
+      "monto": 38000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 80,
+      "porcentajeAdriana": 20,
+      "fecha": "2026-04-06",
+      "categoria": "Comida"
     }
   ]
 }
