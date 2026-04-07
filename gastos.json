@@ -164,6 +164,17 @@
       "porcentajeAdriana": 20,
       "fecha": "2026-04-06",
       "categoria": "Comida"
+    },
+    {
+      "id": 1775598894835,
+      "autor": "Adriana",
+      "descripcion": "Mercado Ara",
+      "monto": 557200,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-07",
+      "categoria": "Hogar"
     }
   ]
 }
