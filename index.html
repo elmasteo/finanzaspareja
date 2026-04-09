@@ -151,7 +151,6 @@ function formatearCOP(valor) {
     const autor = document.getElementById("autor").value;
     const descripcion = document.getElementById("descripcion").value.trim();
     const monto = parseFloat(document.getElementById("monto").value);
-    const tipo = document.getElementById("tipo-division").value;
     const fecha = new Date().toISOString().split("T")[0]; // formato YYYY-MM-DD
     const categoria = categorizarDescripcion(descripcion);
 
