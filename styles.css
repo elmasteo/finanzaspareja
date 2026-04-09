@@ -269,3 +269,7 @@ a > button:hover {
   padding: 4px 6px;
   cursor: pointer;
 }
+
+.detalle {
+  white-space: pre-line;
+}
