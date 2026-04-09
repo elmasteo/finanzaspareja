@@ -157,9 +157,12 @@ function formatearCOP(valor) {
 
     if (!descripcion || isNaN(monto) || monto <= 0) return alert("Complete todos los campos correctamente");
 
+    const tipoSeleccionado = document.getElementById("tipo-division").value;
+
+    let tipo = tipoSeleccionado;
     let porcentajeSantiago = 50, porcentajeAdriana = 50;
 
-    if (tipo === "porcentaje") {
+    if (tipoSeleccionado === "porcentaje") {
       porcentajeSantiago = parseInt(document.getElementById("porcentaje-Santiago").value) || 0;
       porcentajeAdriana = parseInt(document.getElementById("porcentaje-Adriana").value) || 0;
 
@@ -168,11 +171,9 @@ function formatearCOP(valor) {
       }
     }
 
-    if (tipo === "predefinido") {
+    if (tipoSeleccionado === "predefinido") {
       porcentajeSantiago = 47;
       porcentajeAdriana = 53;
-
-      // importante: lo tratas como porcentaje internamente
       tipo = "porcentaje";
     }
 
