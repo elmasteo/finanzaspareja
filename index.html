@@ -527,19 +527,31 @@ function guardarEdicion(id) {
 }
 
 function getDetalleGasto(gasto) {
+  const esSantiago = gasto.autor === "Santiago";
+  const otro = esSantiago ? "Adriana" : "Santiago";
+
   if (gasto.tipo === "total") {
-    return gasto.autor === "Santiago"
-      ? `Adriana debe a Santiago: ${gasto.monto}`
-      : `Santiago debe a Adriana: ${gasto.monto}`;
-  } else if (gasto.tipo === "mitad") {
-    const mitad = gasto.monto / 2;
-    return `${gasto.autor} pagó ${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe ${mitad}`;
-  } else {
-    const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
-    const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
-    const debe = gasto.autor === "Santiago" ? a : s;
-    return `${gasto.autor} pagó ${gasto.monto}, ${gasto.autor === "Santiago" ? "Adriana" : "Santiago"} debe ${debe}`;
+    return esSantiago
+      ? `Adriana debe a Santiago: ${formatearCOP(gasto.monto)} (100%)`
+      : `Santiago debe a Adriana: ${formatearCOP(gasto.monto)} (100%)`;
   }
+
+  if (gasto.tipo === "mitad") {
+    const mitad = gasto.monto / 2;
+    return `${gasto.autor} pagó ${formatearCOP(gasto.monto)}, ${otro} debe ${formatearCOP(mitad)} (50%)`;
+  }
+
+  // porcentaje
+  const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+  const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+
+  const debe = esSantiago ? a : s;
+  const porcentajeDeuda = esSantiago
+    ? gasto.porcentajeAdriana
+    : gasto.porcentajeSantiago;
+
+  return `${gasto.autor} pagó ${formatearCOP(gasto.monto)}, ${otro} debe ${formatearCOP(debe)} (${porcentajeDeuda}%) 
+[S: ${gasto.porcentajeSantiago}% | A: ${gasto.porcentajeAdriana}%]`;
 }
 
 
