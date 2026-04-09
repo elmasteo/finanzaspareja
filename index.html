@@ -527,6 +527,8 @@ function guardarEdicion(id) {
 }
 
 function getDetalleGasto(gasto) {
+  const esSantiago = gasto.autor === "Santiago";
+  const otro = esSantiago ? "Adriana" : "Santiago";
 
   if (gasto.tipo === "total") {
     return esSantiago
@@ -542,15 +544,11 @@ function getDetalleGasto(gasto) {
 const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
 const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
 
-const esSantiago = gasto.autor === "Santiago";
-
 const pagoAutor = esSantiago ? s : a;
 const porcentajeAutor = esSantiago ? gasto.porcentajeSantiago : gasto.porcentajeAdriana;
 
 const deudaOtro = esSantiago ? a : s;
 const porcentajeOtro = esSantiago ? gasto.porcentajeAdriana : gasto.porcentajeSantiago;
-
-const otro = esSantiago ? "Adriana" : "Santiago";
 
 return `${gasto.autor} pagó ${formatearCOP(gasto.monto)} (${porcentajeAutor}%)
 ${otro} debe ${formatearCOP(deudaOtro)} (${porcentajeOtro}%)`;
