@@ -541,17 +541,21 @@ function getDetalleGasto(gasto) {
     return `${gasto.autor} pagó ${formatearCOP(gasto.monto)}, ${otro} debe ${formatearCOP(mitad)} (50%)`;
   }
 
-  // porcentaje
-  const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
-  const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
 
-  const debe = esSantiago ? a : s;
-  const porcentajeDeuda = esSantiago
-    ? gasto.porcentajeAdriana
-    : gasto.porcentajeSantiago;
+const esSantiago = gasto.autor === "Santiago";
 
-  return `${gasto.autor} pagó ${formatearCOP(gasto.monto)}, ${otro} debe ${formatearCOP(debe)} (${porcentajeDeuda}%) 
-[S: ${gasto.porcentajeSantiago}% | A: ${gasto.porcentajeAdriana}%]`;
+const pagoAutor = esSantiago ? s : a;
+const porcentajeAutor = esSantiago ? gasto.porcentajeSantiago : gasto.porcentajeAdriana;
+
+const deudaOtro = esSantiago ? a : s;
+const porcentajeOtro = esSantiago ? gasto.porcentajeAdriana : gasto.porcentajeSantiago;
+
+const otro = esSantiago ? "Adriana" : "Santiago";
+
+return `${gasto.autor} pagó ${formatearCOP(gasto.monto)} (${porcentajeAutor}%)
+${otro} debe ${formatearCOP(deudaOtro)} (${porcentajeOtro}%)`;
 }
 
 
