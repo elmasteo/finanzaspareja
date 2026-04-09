@@ -210,17 +210,6 @@
       "categoria": "Otros"
     },
     {
-      "id": 1775770530370,
-      "autor": "Santiago",
-      "descripcion": "prueba de gasto nuevo",
-      "monto": 10000,
-      "tipo": "porcentaje",
-      "porcentajeSantiago": 47,
-      "porcentajeAdriana": 53,
-      "fecha": "2026-04-09",
-      "categoria": "Servicios"
-    },
-    {
       "id": 1775770940761,
       "autor": "Santiago",
       "descripcion": "prueba de gasto nuevo",
