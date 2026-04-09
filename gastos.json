@@ -186,6 +186,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-07",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1775759435984,
+      "autor": "Adriana",
+      "descripcion": "Almuerzo Crepes",
+      "monto": 112900,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-09",
+      "categoria": "Comida"
     }
   ]
 }
