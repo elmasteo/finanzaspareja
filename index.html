@@ -31,6 +31,7 @@
   <select id="tipo-division">
     <option value="total">Se debe el total</option>
     <option value="mitad">Mitad y mitad</option>
+    <option value="predefinido">47% - 53%</option>
     <option value="porcentaje">Porcentaje</option>
   </select>
   <div class="row" id="porcentaje-fields" style="display: none">
@@ -126,8 +127,10 @@ async function init() {
 init();
 
   document.getElementById("tipo-division").addEventListener("change", e => {
-    document.getElementById("porcentaje-fields").style.display = e.target.value === "porcentaje" ? "flex" : "none";
-  });
+  const tipo = e.target.value;
+  document.getElementById("porcentaje-fields").style.display =
+    tipo === "porcentaje" ? "flex" : "none";
+});
 
  async function guardarGastos() {
    await fetch('/.netlify/functions/guardarGasto', {
@@ -155,10 +158,22 @@ function formatearCOP(valor) {
     if (!descripcion || isNaN(monto) || monto <= 0) return alert("Complete todos los campos correctamente");
 
     let porcentajeSantiago = 50, porcentajeAdriana = 50;
+
     if (tipo === "porcentaje") {
       porcentajeSantiago = parseInt(document.getElementById("porcentaje-Santiago").value) || 0;
       porcentajeAdriana = parseInt(document.getElementById("porcentaje-Adriana").value) || 0;
-      if (porcentajeSantiago + porcentajeAdriana !== 100) return alert("Los porcentajes deben sumar 100%");
+
+      if (porcentajeSantiago + porcentajeAdriana !== 100) {
+        return alert("Los porcentajes deben sumar 100%");
+      }
+    }
+
+    if (tipo === "predefinido") {
+      porcentajeSantiago = 47;
+      porcentajeAdriana = 53;
+
+      // importante: lo tratas como porcentaje internamente
+      tipo = "porcentaje";
     }
 
     const nuevoGasto = {
