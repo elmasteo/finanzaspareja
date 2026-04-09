@@ -208,6 +208,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-04-09",
       "categoria": "Otros"
+    },
+    {
+      "id": 1775774770838,
+      "autor": "Adriana",
+      "descripcion": "Lavar Baño",
+      "monto": 100000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-09",
+      "categoria": "Otros"
     }
   ]
 }
