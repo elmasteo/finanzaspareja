@@ -249,7 +249,7 @@ function renderGastos() {
           <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">🗑️</button>
         `}
       </div>
-      <div class="detalle">${getDetalleGasto(gasto)}</div>
+      
       <div class="contenido">
         ${editable ? `
           <input type="text" class="input-desc" value="${gasto.descripcion}">
@@ -259,6 +259,7 @@ function renderGastos() {
           <div>${formatearCOP(gasto.monto)}</div>
         `}
       </div>
+      <div class="detalle">${getDetalleGasto(gasto)}</div>
       <div class="meta">${gasto.fecha}</div>
     `;
 
@@ -480,7 +481,9 @@ function getDivisionDetalle(gasto) {
   } else {
     const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
     const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
-    return `Porcentaje – Santiago: ${formatearCOP(s)} / Adriana: ${formatearCOP(a)} (${gasto.porcentajeSantiago}% / ${gasto.porcentajeAdriana}%)`;
+    return `Porcentaje – 
+    Santiago: ${formatearCOP(s)} - ${gasto.porcentajeSantiago}% 
+    Adriana: ${formatearCOP(a)} - ${gasto.porcentajeAdriana}%`;
   }
 }
 
