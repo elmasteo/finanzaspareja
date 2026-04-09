@@ -527,8 +527,6 @@ function guardarEdicion(id) {
 }
 
 function getDetalleGasto(gasto) {
-  const esSantiago = gasto.autor === "Santiago";
-  const otro = esSantiago ? "Adriana" : "Santiago";
 
   if (gasto.tipo === "total") {
     return esSantiago
