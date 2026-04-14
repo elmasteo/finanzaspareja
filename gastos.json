@@ -230,6 +230,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-14",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1776132833657,
+      "autor": "Santiago",
+      "descripcion": "Mercado Plaza",
+      "monto": 192000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-14",
+      "categoria": "Hogar"
     }
   ]
 }
