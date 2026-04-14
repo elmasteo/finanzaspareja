@@ -252,6 +252,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-14",
       "categoria": "Comida"
+    },
+    {
+      "id": 1776199993477,
+      "autor": "Santiago",
+      "descripcion": "Fotos",
+      "monto": 226000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-14",
+      "categoria": "Otros"
     }
   ]
 }
