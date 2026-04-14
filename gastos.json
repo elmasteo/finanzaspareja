@@ -263,6 +263,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-14",
       "categoria": "Otros"
+    },
+    {
+      "id": 1776201227458,
+      "autor": "Santiago",
+      "descripcion": "Mercado - Dollarcity",
+      "monto": 67500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-14",
+      "categoria": "Hogar"
     }
   ]
 }
