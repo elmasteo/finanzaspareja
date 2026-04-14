@@ -241,6 +241,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-14",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1776132866723,
+      "autor": "Santiago",
+      "descripcion": "Mercado Carne",
+      "monto": 128800,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-14",
+      "categoria": "Comida"
     }
   ]
 }
