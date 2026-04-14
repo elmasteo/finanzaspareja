@@ -274,6 +274,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-14",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1776203090180,
+      "autor": "Santiago",
+      "descripcion": "Mercado- Bloqueador",
+      "monto": 76760,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-14",
+      "categoria": "Hogar"
     }
   ]
 }
