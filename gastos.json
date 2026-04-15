@@ -285,6 +285,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-14",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1776285304505,
+      "autor": "Adriana",
+      "descripcion": "Visa",
+      "monto": 1372400,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-15",
+      "categoria": "Otros"
     }
   ]
 }
