@@ -307,6 +307,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-04-17",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1776442495449,
+      "autor": "Santiago",
+      "descripcion": "Abono deuda actual",
+      "monto": 186000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-17",
+      "categoria": "Otros"
     }
   ]
 }
