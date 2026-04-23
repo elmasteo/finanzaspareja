@@ -362,6 +362,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-23",
       "categoria": "Otros"
+    },
+    {
+      "id": 1776982622001,
+      "autor": "Santiago",
+      "descripcion": "Juego Basta",
+      "monto": 55000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-23",
+      "categoria": "Entretenimiento"
     }
   ]
 }
