@@ -384,6 +384,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-04-26",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1777239398314,
+      "autor": "Santiago",
+      "descripcion": "Mercado leche",
+      "monto": 75200,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-04-26",
+      "categoria": "Hogar"
     }
   ]
 }
