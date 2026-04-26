@@ -395,6 +395,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-26",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1777239416761,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo pollo",
+      "monto": 34000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-26",
+      "categoria": "Comida"
     }
   ]
 }
