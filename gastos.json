@@ -373,6 +373,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-04-23",
       "categoria": "Entretenimiento"
+    },
+    {
+      "id": 1777239374361,
+      "autor": "Santiago",
+      "descripcion": "Tv Stick - Suegro",
+      "monto": 74000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-04-26",
+      "categoria": "Servicios"
     }
   ]
 }
