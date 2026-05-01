@@ -417,6 +417,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-01",
       "categoria": "Otros"
+    },
+    {
+      "id": 1777652314310,
+      "autor": "Santiago",
+      "descripcion": "Paquete claro suegra",
+      "monto": 13000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-05-01",
+      "categoria": "Otros"
     }
   ]
 }
