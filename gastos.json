@@ -428,6 +428,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-01",
       "categoria": "Otros"
+    },
+    {
+      "id": 1778035287263,
+      "autor": "Santiago",
+      "descripcion": "Recibo Luz - Mayo",
+      "monto": 82180,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-06",
+      "categoria": "Servicios"
     }
   ]
 }
