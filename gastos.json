@@ -439,6 +439,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-06",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1778268264278,
+      "autor": "Santiago",
+      "descripcion": "Mercado - Pequeño",
+      "monto": 149980,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-08",
+      "categoria": "Hogar"
     }
   ]
 }
