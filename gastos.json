@@ -505,6 +505,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-09",
       "categoria": "Otros"
+    },
+    {
+      "id": 1778359755358,
+      "autor": "Adriana",
+      "descripcion": "Medicamento",
+      "monto": 40000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-05-09",
+      "categoria": "Otros"
     }
   ]
 }
