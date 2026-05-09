@@ -494,6 +494,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-09",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1778356512916,
+      "autor": "Adriana",
+      "descripcion": "Dólar city",
+      "monto": 28500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-09",
+      "categoria": "Otros"
     }
   ]
 }
