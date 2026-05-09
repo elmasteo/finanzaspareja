@@ -483,6 +483,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-09",
       "categoria": "Comida"
+    },
+    {
+      "id": 1778356467619,
+      "autor": "Adriana",
+      "descripcion": "Uber",
+      "monto": 19000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-09",
+      "categoria": "Transporte"
     }
   ]
 }
