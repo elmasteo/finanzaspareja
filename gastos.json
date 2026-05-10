@@ -527,6 +527,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-09",
       "categoria": "Otros"
+    },
+    {
+      "id": 1778425982752,
+      "autor": "Santiago",
+      "descripcion": "Recibo Agua Mayo",
+      "monto": 82910,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-10",
+      "categoria": "Servicios"
     }
   ]
 }
