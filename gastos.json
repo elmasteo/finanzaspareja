@@ -549,6 +549,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-10",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1778426649213,
+      "autor": "Adriana",
+      "descripcion": "Desayuno",
+      "monto": 15500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-10",
+      "categoria": "Comida"
     }
   ]
 }
