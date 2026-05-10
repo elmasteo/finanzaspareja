@@ -538,6 +538,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-10",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1778426596014,
+      "autor": "Adriana",
+      "descripcion": "D1",
+      "monto": 87000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-10",
+      "categoria": "Hogar"
     }
   ]
 }
