@@ -540,7 +540,7 @@
       "categoria": "Servicios"
     },
     {
-      "id": 1778426596014,
+      "id": 1778426575785,
       "autor": "Adriana",
       "descripcion": "D1",
       "monto": 87000,
@@ -551,18 +551,7 @@
       "categoria": "Hogar"
     },
     {
-      "id": 1778426649213,
-      "autor": "Adriana",
-      "descripcion": "Desayuno",
-      "monto": 15500,
-      "tipo": "porcentaje",
-      "porcentajeSantiago": 47,
-      "porcentajeAdriana": 53,
-      "fecha": "2026-05-10",
-      "categoria": "Comida"
-    },
-    {
-      "id": 1778426653419,
+      "id": 1778426633864,
       "autor": "Adriana",
       "descripcion": "Desayuno",
       "monto": 15500,
