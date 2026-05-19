@@ -615,6 +615,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-16",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1779207227971,
+      "autor": "Santiago",
+      "descripcion": "Internet - Servicio",
+      "monto": 78900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-19",
+      "categoria": "Servicios"
     }
   ]
 }
