@@ -626,6 +626,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-19",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1779360946960,
+      "autor": "Adriana",
+      "descripcion": "Préstamo",
+      "monto": 100000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-05-21",
+      "categoria": "Otros"
     }
   ]
 }
