@@ -648,6 +648,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-21",
       "categoria": "Comida"
+    },
+    {
+      "id": 1779481836399,
+      "autor": "Adriana",
+      "descripcion": "Pantalones",
+      "monto": 360500,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-05-22",
+      "categoria": "Otros"
     }
   ]
 }
