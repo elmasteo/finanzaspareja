@@ -670,6 +670,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-25",
       "categoria": "Comida"
+    },
+    {
+      "id": 1779714969303,
+      "autor": "Santiago",
+      "descripcion": "Recibo - Gas",
+      "monto": 14600,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-25",
+      "categoria": "Servicios"
     }
   ]
 }
