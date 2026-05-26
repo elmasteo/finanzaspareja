@@ -681,6 +681,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-25",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1779816720640,
+      "autor": "Santiago",
+      "descripcion": "Recarga Tullave",
+      "monto": 20230,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-26",
+      "categoria": "Otros"
     }
   ]
 }
