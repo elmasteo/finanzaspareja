@@ -703,6 +703,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-27",
       "categoria": "Comida"
+    },
+    {
+      "id": 1779920061334,
+      "autor": "Adriana",
+      "descripcion": "Licencia de Conducción",
+      "monto": 329900,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-05-27",
+      "categoria": "Otros"
     }
   ]
 }
