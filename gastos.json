@@ -725,6 +725,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-05-28",
       "categoria": "Otros"
+    },
+    {
+      "id": 1780017273690,
+      "autor": "Adriana",
+      "descripcion": "Mercado - Ara",
+      "monto": 558741,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-29",
+      "categoria": "Hogar"
     }
   ]
 }
