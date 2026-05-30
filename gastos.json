@@ -736,6 +736,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-05-29",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1780099868057,
+      "autor": "Adriana",
+      "descripcion": "Llave cocina",
+      "monto": 60000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-05-30",
+      "categoria": "Otros"
     }
   ]
 }
