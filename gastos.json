@@ -835,6 +835,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-04",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1780604247167,
+      "autor": "Adriana",
+      "descripcion": "Almuerzo",
+      "monto": 68800,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-04",
+      "categoria": "Comida"
     }
   ]
 }
