@@ -824,6 +824,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-03",
       "categoria": "Otros"
+    },
+    {
+      "id": 1780582839964,
+      "autor": "Santiago",
+      "descripcion": "Recibo Luz",
+      "monto": 85270,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-04",
+      "categoria": "Servicios"
     }
   ]
 }
