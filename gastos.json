@@ -846,6 +846,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-06-04",
       "categoria": "Comida"
+    },
+    {
+      "id": 1780770249965,
+      "autor": "Santiago",
+      "descripcion": "Chapas",
+      "monto": 57000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-06",
+      "categoria": "Otros"
     }
   ]
 }
