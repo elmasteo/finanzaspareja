@@ -868,6 +868,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-11",
       "categoria": "Otros"
+    },
+    {
+      "id": 1781205461577,
+      "autor": "Adriana",
+      "descripcion": "Droguería",
+      "monto": 74793,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-11",
+      "categoria": "Otros"
     }
   ]
 }
