@@ -857,6 +857,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-06",
       "categoria": "Otros"
+    },
+    {
+      "id": 1781205438711,
+      "autor": "Adriana",
+      "descripcion": "Café",
+      "monto": 62900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-11",
+      "categoria": "Otros"
     }
   ]
 }
