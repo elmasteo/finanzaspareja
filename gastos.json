@@ -879,6 +879,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-11",
       "categoria": "Otros"
+    },
+    {
+      "id": 1781212460814,
+      "autor": "Santiago",
+      "descripcion": "Sofá",
+      "monto": 50000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-11",
+      "categoria": "Otros"
     }
   ]
 }
