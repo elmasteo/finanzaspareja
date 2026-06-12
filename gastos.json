@@ -912,6 +912,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-12",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1781289616681,
+      "autor": "Adriana",
+      "descripcion": "Gimnasio",
+      "monto": 160000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-12",
+      "categoria": "Otros"
     }
   ]
 }
