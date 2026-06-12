@@ -890,6 +890,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-11",
       "categoria": "Otros"
+    },
+    {
+      "id": 1781227462567,
+      "autor": "Santiago",
+      "descripcion": "Empanada",
+      "monto": 14500,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-12",
+      "categoria": "Comida"
     }
   ]
 }
