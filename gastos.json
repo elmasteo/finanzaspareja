@@ -934,6 +934,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-06-13",
       "categoria": "Comida"
+    },
+    {
+      "id": 1781393533469,
+      "autor": "Santiago",
+      "descripcion": "Empanadas",
+      "monto": 10400,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-13",
+      "categoria": "Comida"
     }
   ]
 }
