@@ -923,6 +923,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-06-12",
       "categoria": "Otros"
+    },
+    {
+      "id": 1781327051717,
+      "autor": "Santiago",
+      "descripcion": "Pizza",
+      "monto": 50500,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-13",
+      "categoria": "Comida"
     }
   ]
 }
