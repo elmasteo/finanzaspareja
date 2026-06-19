@@ -978,6 +978,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-06-17",
       "categoria": "Vestuario"
+    },
+    {
+      "id": 1781847011198,
+      "autor": "Santiago",
+      "descripcion": "Internet Hogar",
+      "monto": 84900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-19",
+      "categoria": "Servicios"
     }
   ]
 }
