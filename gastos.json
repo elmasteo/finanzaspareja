@@ -989,6 +989,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-19",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1782079427707,
+      "autor": "Adriana",
+      "descripcion": "Cámaras",
+      "monto": 940000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-21",
+      "categoria": "Otros"
     }
   ]
 }
