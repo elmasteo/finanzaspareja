@@ -1022,6 +1022,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-22",
       "categoria": "Otros"
+    },
+    {
+      "id": 1782092976103,
+      "autor": "Adriana",
+      "descripcion": "Gasolina",
+      "monto": 135600,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-22",
+      "categoria": "Transporte"
     }
   ]
 }
