@@ -1000,6 +1000,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-21",
       "categoria": "Otros"
+    },
+    {
+      "id": 1782092942337,
+      "autor": "Adriana",
+      "descripcion": "Forro carro",
+      "monto": 490700,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-22",
+      "categoria": "Otros"
     }
   ]
 }
