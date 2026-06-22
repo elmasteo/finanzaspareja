@@ -1011,6 +1011,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-22",
       "categoria": "Otros"
+    },
+    {
+      "id": 1782092962064,
+      "autor": "Adriana",
+      "descripcion": "Xiomi Tag",
+      "monto": 80000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-22",
+      "categoria": "Otros"
     }
   ]
 }
