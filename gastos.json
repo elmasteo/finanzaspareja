@@ -1044,6 +1044,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-06-22",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1782302695270,
+      "autor": "Santiago",
+      "descripcion": "Recibo - Gas",
+      "monto": 12390,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-24",
+      "categoria": "Servicios"
     }
   ]
 }
