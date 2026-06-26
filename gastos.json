@@ -1055,6 +1055,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-06-24",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1782484713931,
+      "autor": "Adriana",
+      "descripcion": "Soldadura",
+      "monto": 42000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-06-26",
+      "categoria": "Otros"
     }
   ]
 }
