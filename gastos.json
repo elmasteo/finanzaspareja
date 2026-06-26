@@ -1,3 +1,15 @@
 {
-  "gastos": []
+  "gastos": [
+    {
+      "id": 1782484959948,
+      "autor": "Santiago",
+      "descripcion": "Saldo faltante",
+      "monto": 16000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-26",
+      "categoria": "Otros"
+    }
+  ]
 }
