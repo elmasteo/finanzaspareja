@@ -10,6 +10,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-06-26",
       "categoria": "Otros"
+    },
+    {
+      "id": 1782494414113,
+      "autor": "Santiago",
+      "descripcion": "Carne",
+      "monto": 32000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-06-26",
+      "categoria": "Comida"
     }
   ]
 }
