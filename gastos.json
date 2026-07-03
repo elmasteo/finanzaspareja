@@ -43,6 +43,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-03",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1783116928583,
+      "autor": "Santiago",
+      "descripcion": "Cámara",
+      "monto": 200000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-07-03",
+      "categoria": "Otros"
     }
   ]
 }
