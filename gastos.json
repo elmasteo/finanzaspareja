@@ -54,6 +54,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-03",
       "categoria": "Otros"
+    },
+    {
+      "id": 1783192587354,
+      "autor": "Santiago",
+      "descripcion": "Duplicado Llaves",
+      "monto": 18000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-07-04",
+      "categoria": "Otros"
     }
   ]
 }
