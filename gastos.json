@@ -109,6 +109,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-07-08",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1783512936002,
+      "autor": "Santiago",
+      "descripcion": "Agua - Recibo",
+      "monto": 98290,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-07-08",
+      "categoria": "Servicios"
     }
   ]
 }
