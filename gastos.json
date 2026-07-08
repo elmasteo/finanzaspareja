@@ -98,6 +98,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-08",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1783477760338,
+      "autor": "Adriana",
+      "descripcion": "Mercado suegra",
+      "monto": 40030,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-07-08",
+      "categoria": "Hogar"
     }
   ]
 }
