@@ -153,6 +153,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-14",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1784141887423,
+      "autor": "Adriana",
+      "descripcion": "Accesorios Carro",
+      "monto": 304800,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-07-15",
+      "categoria": "Otros"
     }
   ]
 }
