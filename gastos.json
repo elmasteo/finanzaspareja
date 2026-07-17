@@ -164,6 +164,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-15",
       "categoria": "Otros"
+    },
+    {
+      "id": 1784309594727,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo",
+      "monto": 30000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-07-17",
+      "categoria": "Comida"
     }
   ]
 }
