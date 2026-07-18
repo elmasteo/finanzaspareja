@@ -175,6 +175,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-07-17",
       "categoria": "Comida"
+    },
+    {
+      "id": 1784401751465,
+      "autor": "Santiago",
+      "descripcion": "Toallas",
+      "monto": 159960,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-07-18",
+      "categoria": "Otros"
     }
   ]
 }
