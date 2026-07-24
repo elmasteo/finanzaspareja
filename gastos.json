@@ -252,6 +252,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-24",
       "categoria": "Otros"
+    },
+    {
+      "id": 1784862883588,
+      "autor": "Adriana",
+      "descripcion": "Vuelos Miami",
+      "monto": 1137700,
+      "tipo": "mitad",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-07-24",
+      "categoria": "Otros"
     }
   ]
 }
