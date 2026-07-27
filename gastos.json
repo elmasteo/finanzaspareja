@@ -21,6 +21,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-07-27",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1785177220867,
+      "autor": "Santiago",
+      "descripcion": "Pan y Queso",
+      "monto": 18880,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-07-27",
+      "categoria": "Hogar"
     }
   ]
 }
