@@ -98,6 +98,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-06",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1786046794160,
+      "autor": "Santiago",
+      "descripcion": "Sombrilla - Trapos",
+      "monto": 45000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-06",
+      "categoria": "Otros"
     }
   ]
 }
