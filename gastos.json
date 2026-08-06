@@ -87,6 +87,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-08-05",
       "categoria": "Comida"
+    },
+    {
+      "id": 1785979892462,
+      "autor": "Santiago",
+      "descripcion": "Recibo - Luz",
+      "monto": 91010,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-06",
+      "categoria": "Servicios"
     }
   ]
 }
