@@ -142,6 +142,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-10",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1786388344052,
+      "autor": "Santiago",
+      "descripcion": "Manguera Baño",
+      "monto": 8500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-10",
+      "categoria": "Otros"
     }
   ]
 }
