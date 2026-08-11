@@ -153,6 +153,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-10",
       "categoria": "Otros"
+    },
+    {
+      "id": 1786466472033,
+      "autor": "Santiago",
+      "descripcion": "Rieles de cajón",
+      "monto": 62000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-11",
+      "categoria": "Otros"
     }
   ]
 }
