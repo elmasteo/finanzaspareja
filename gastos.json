@@ -219,6 +219,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-12",
       "categoria": "Otros"
+    },
+    {
+      "id": 1786635443036,
+      "autor": "Santiago",
+      "descripcion": "Accesorios baño",
+      "monto": 35000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-13",
+      "categoria": "Otros"
     }
   ]
 }
