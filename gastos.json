@@ -230,6 +230,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-13",
       "categoria": "Otros"
+    },
+    {
+      "id": 1786635460409,
+      "autor": "Santiago",
+      "descripcion": "Uber Kia",
+      "monto": 10387,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-13",
+      "categoria": "Transporte"
     }
   ]
 }
