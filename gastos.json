@@ -241,6 +241,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-13",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1786828979678,
+      "autor": "Adriana",
+      "descripcion": "Ara",
+      "monto": 30650,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-15",
+      "categoria": "Otros"
     }
   ]
 }
