@@ -241,6 +241,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-13",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1786842267757,
+      "autor": "Santiago",
+      "descripcion": "Joyería",
+      "monto": 59000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-08-16",
+      "categoria": "Otros"
     }
   ]
 }
