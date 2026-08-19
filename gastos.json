@@ -274,6 +274,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-18",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1787101070836,
+      "autor": "Adriana",
+      "descripcion": "Préstamo Gimnasio",
+      "monto": 50000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-08-19",
+      "categoria": "Otros"
     }
   ]
 }
