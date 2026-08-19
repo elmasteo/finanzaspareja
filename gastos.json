@@ -296,6 +296,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-19",
       "categoria": "Otros"
+    },
+    {
+      "id": 1787143837191,
+      "autor": "Santiago",
+      "descripcion": "Servicio - Internet",
+      "monto": 84900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-19",
+      "categoria": "Servicios"
     }
   ]
 }
