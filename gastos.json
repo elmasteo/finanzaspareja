@@ -318,6 +318,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-08-20",
       "categoria": "Comida"
+    },
+    {
+      "id": 1787254825838,
+      "autor": "Adriana",
+      "descripcion": "Dona",
+      "monto": 16500,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-08-20",
+      "categoria": "Otros"
     }
   ]
 }
