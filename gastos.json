@@ -329,6 +329,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-08-20",
       "categoria": "Otros"
+    },
+    {
+      "id": 1787327234318,
+      "autor": "Adriana",
+      "descripcion": "Pago DIAN",
+      "monto": 1206000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-08-21",
+      "categoria": "Otros"
     }
   ]
 }
