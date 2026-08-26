@@ -351,6 +351,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-26",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1787752739042,
+      "autor": "Santiago",
+      "descripcion": "Huevos - Arepas",
+      "monto": 23000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-26",
+      "categoria": "Comida"
     }
   ]
 }
