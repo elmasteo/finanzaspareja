@@ -340,6 +340,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-08-21",
       "categoria": "Otros"
+    },
+    {
+      "id": 1787752722420,
+      "autor": "Santiago",
+      "descripcion": "Servicio - Gas",
+      "monto": 11920,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-26",
+      "categoria": "Servicios"
     }
   ]
 }
