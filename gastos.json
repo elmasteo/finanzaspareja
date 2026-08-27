@@ -362,6 +362,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-08-26",
       "categoria": "Comida"
+    },
+    {
+      "id": 1787792474384,
+      "autor": "Adriana",
+      "descripcion": "Gasolina",
+      "monto": 137300,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-08-27",
+      "categoria": "Transporte"
     }
   ]
 }
