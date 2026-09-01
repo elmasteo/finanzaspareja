@@ -406,6 +406,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-08-28",
       "categoria": "Comida"
+    },
+    {
+      "id": 1788283430140,
+      "autor": "Adriana",
+      "descripcion": "Lo del corazón de mini my",
+      "monto": 44300,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-01",
+      "categoria": "Otros"
     }
   ]
 }
