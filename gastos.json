@@ -450,6 +450,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-02",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1788469425970,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo",
+      "monto": 81700,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-09-03",
+      "categoria": "Comida"
     }
   ]
 }
