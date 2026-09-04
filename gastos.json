@@ -494,6 +494,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-04",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1788537356051,
+      "autor": "Adriana",
+      "descripcion": "Maleta",
+      "monto": 184765,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-04",
+      "categoria": "Otros"
     }
   ]
 }
