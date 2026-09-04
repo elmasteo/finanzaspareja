@@ -483,6 +483,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-04",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1788536492254,
+      "autor": "Santiago",
+      "descripcion": "Recibo - Agua",
+      "monto": 75150,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-04",
+      "categoria": "Servicios"
     }
   ]
 }
