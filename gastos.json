@@ -505,6 +505,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-04",
       "categoria": "Otros"
+    },
+    {
+      "id": 1789498050969,
+      "autor": "Santiago",
+      "descripcion": "Detergente",
+      "monto": 58560,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-15",
+      "categoria": "Hogar"
     }
   ]
 }
