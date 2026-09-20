@@ -538,6 +538,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-18",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1789945630491,
+      "autor": "Santiago",
+      "descripcion": "Almuerzo - Molienda",
+      "monto": 404000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-09-20",
+      "categoria": "Comida"
     }
   ]
 }
