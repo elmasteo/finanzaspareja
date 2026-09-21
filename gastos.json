@@ -560,6 +560,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-20",
       "categoria": "Otros"
+    },
+    {
+      "id": 1790019147603,
+      "autor": "Santiago",
+      "descripcion": "Préstamo Natalia - Lavadora",
+      "monto": 1530000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-09-21",
+      "categoria": "Otros"
     }
   ]
 }
