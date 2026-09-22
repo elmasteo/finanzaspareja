@@ -593,6 +593,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-22",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1790119058711,
+      "autor": "Adriana",
+      "descripcion": "Fruver",
+      "monto": 69600,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-22",
+      "categoria": "Hogar"
     }
   ]
 }
