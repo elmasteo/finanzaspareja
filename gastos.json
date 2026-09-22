@@ -582,6 +582,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-22",
       "categoria": "Otros"
+    },
+    {
+      "id": 1790118743190,
+      "autor": "Santiago",
+      "descripcion": "Parqueadero",
+      "monto": 8700,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-22",
+      "categoria": "Transporte"
     }
   ]
 }
