@@ -571,6 +571,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-09-21",
       "categoria": "Otros"
+    },
+    {
+      "id": 1790118723689,
+      "autor": "Santiago",
+      "descripcion": "Leche - Arroz",
+      "monto": 83400,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-22",
+      "categoria": "Otros"
     }
   ]
 }
