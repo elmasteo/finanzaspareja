@@ -626,6 +626,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-24",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1790216561331,
+      "autor": "Santiago",
+      "descripcion": "Recarga Peaje",
+      "monto": 100000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-24",
+      "categoria": "Transporte"
     }
   ]
 }
