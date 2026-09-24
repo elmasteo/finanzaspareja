@@ -637,6 +637,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-24",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1790256418563,
+      "autor": "Santiago",
+      "descripcion": "Gas - Factura",
+      "monto": 11690,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-24",
+      "categoria": "Servicios"
     }
   ]
 }
