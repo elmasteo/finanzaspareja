@@ -648,6 +648,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-09-24",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1790264742096,
+      "autor": "Adriana",
+      "descripcion": "Filtro",
+      "monto": 25900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-09-24",
+      "categoria": "Otros"
     }
   ]
 }
