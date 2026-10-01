@@ -4034,5 +4034,32 @@
         "categoria": "Otros"
       }
     ]
+  },
+  {
+    "fecha": "2026-10-01",
+    "gastos": [
+      {
+        "id": 1790559037840,
+        "autor": "Santiago",
+        "descripcion": "Almuerzo",
+        "monto": 75000,
+        "tipo": "total",
+        "porcentajeSantiago": 50,
+        "porcentajeAdriana": 50,
+        "fecha": "2026-09-28",
+        "categoria": "Comida"
+      },
+      {
+        "id": 1790732624211,
+        "autor": "Adriana",
+        "descripcion": "Gasolina",
+        "monto": 128632,
+        "tipo": "porcentaje",
+        "porcentajeSantiago": 47,
+        "porcentajeAdriana": 53,
+        "fecha": "2026-09-30",
+        "categoria": "Transporte"
+      }
+    ]
   }
 ]
