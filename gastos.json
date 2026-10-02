@@ -10,6 +10,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-10-01",
       "categoria": "Comida"
+    },
+    {
+      "id": 1790910443718,
+      "autor": "Adriana",
+      "descripcion": "Parqueadero",
+      "monto": 4000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-10-02",
+      "categoria": "Transporte"
     }
   ]
 }
