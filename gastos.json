@@ -32,6 +32,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-10-03",
       "categoria": "Otros"
+    },
+    {
+      "id": 1790999910399,
+      "autor": "Adriana",
+      "descripcion": "Uñas",
+      "monto": 145000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-10-03",
+      "categoria": "Otros"
     }
   ]
 }
