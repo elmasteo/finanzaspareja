@@ -76,6 +76,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-10-07",
       "categoria": "Comida"
+    },
+    {
+      "id": 1791399093224,
+      "autor": "Santiago",
+      "descripcion": "Cinta Transparente",
+      "monto": 8000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-10-07",
+      "categoria": "Otros"
     }
   ]
 }
