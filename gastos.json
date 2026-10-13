@@ -87,6 +87,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-10-07",
       "categoria": "Otros"
+    },
+    {
+      "id": 1791932707529,
+      "autor": "Santiago",
+      "descripcion": "Dollarcity",
+      "monto": 14000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-10-13",
+      "categoria": "Otros"
     }
   ]
 }
