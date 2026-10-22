@@ -186,6 +186,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-10-20",
       "categoria": "Otros"
+    },
+    {
+      "id": 1792696212438,
+      "autor": "Santiago",
+      "descripcion": "Recarga Claro",
+      "monto": 24000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-10-22",
+      "categoria": "Otros"
     }
   ]
 }
