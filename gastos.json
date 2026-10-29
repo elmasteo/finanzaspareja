@@ -252,17 +252,6 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-10-29",
       "categoria": "Comida"
-    },
-    {
-      "id": 1793317105195,
-      "autor": "Santiago",
-      "descripcion": "Test",
-      "monto": 1000,
-      "tipo": "total",
-      "porcentajeSantiago": 50,
-      "porcentajeAdriana": 50,
-      "fecha": "2026-10-29",
-      "categoria": "Otros"
     }
   ]
 }
