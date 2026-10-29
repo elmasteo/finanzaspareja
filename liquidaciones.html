@@ -2,273 +2,253 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1120" />
   <title>Liquidaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    :root {
-      --bg: #f2f2f2;
-      --card: #ffffff;
-      --text: #2d3436;
-      --primary: #0984e3;
-      --primary-hover: #74b9ff;
-      --accent: #00cec9;
-      --danger: #d63031;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      transition: background 0.3s, color 0.3s;
-    }
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .filtros {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      max-width: 400px;
-    }
-    .filtros label {
-      font-weight: 600;
-      align-self: center;
-      min-width: 40px;
-    }
-    input[type="month"] {
-      padding: 0.4rem 0.6rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: white;
-      color: var(--text);
-      cursor: pointer;
-      flex: 1;
-      min-width: 120px;
-      transition: border-color 0.3s;
-    }
-    input[type="month"]:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    #graficoTorta {
-      max-width: 360px;
-      max-height: 360px;
-      width: 100%;
-      height: auto;
-      margin-bottom: 3rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      background: var(--card);
-      padding: 1rem;
-    }
-    #btnVolver {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(9, 132, 227, 0.5);
-      transition: background 0.3s ease;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 300px;
-      width: 90%;
-      text-align: center;
-    }
-    #btnVolver:hover {
-      background: var(--primary-hover);
-    }
-    @media (max-width: 600px) {
-      body {
-        padding: 0.5rem;
-      }
-
-      .filtros {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0 1rem;
-      }
-
-      .filtros label {
-        min-width: auto;
-        font-size: 0.95rem;
-        text-align: left;
-      }
-
-      input[type="month"] {
-        font-size: 1rem;
-        width: 100%;
-      }
-
-      #graficoTorta {
-        max-width: 80%;
-        height: auto;
-        padding: 1rem;
-        border-radius: 12px;
-      }
-
-      #btnVolver {
-        font-size: 1rem;
-        padding: 1rem;
-        width: 90%;
-        max-width: none;
-        bottom: 20px;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Resumen de Liquidaciones</h1>
 
-  <div class="filtros">
-    <label for="desde">Desde:</label>
-    <input type="month" id="desde" />
-    <label for="hasta">Hasta:</label>
-    <input type="month" id="hasta" />
-  </div>
+<main class="app ancha">
+  <header class="topbar">
+    <div>
+      <h1>Liquidaciones</h1>
+      <p class="sub">En qué se ha ido el dinero</p>
+    </div>
+    <button id="modoToggle" class="icon-btn" type="button" aria-label="Cambiar tema">🌙</button>
+  </header>
 
-  <canvas id="graficoTorta"></canvas>
+  <section class="card filtros">
+    <div class="fechas">
+      <label class="campo">
+        <span>Desde</span>
+        <input type="month" id="desde" />
+      </label>
+      <label class="campo">
+        <span>Hasta</span>
+        <input type="month" id="hasta" />
+      </label>
+    </div>
+    <div class="atajos">
+      <button type="button" class="atajo" id="atajo-mes">Este mes</button>
+      <button type="button" class="atajo" id="atajo-todo">Todo</button>
+    </div>
+  </section>
 
-  <div id="detalleCategoria" style="max-width: 600px; width: 100%; margin-top: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1rem; display: none;"></div>
+  <section class="balance total-card" data-estado="balanceado" style="--acento: var(--primary)">
+    <p class="balance-label">Total liquidado</p>
+    <p class="balance-monto" id="totalMonto">$ 0</p>
+    <p class="balance-texto" id="totalTexto"></p>
+  </section>
 
+  <section class="card" id="seccionGrafico">
+    <div class="grafico-wrap">
+      <canvas id="graficoTorta" aria-label="Gastos por categoría" role="img"></canvas>
+    </div>
+    <div class="ranking" id="ranking"></div>
+  </section>
 
-  <button id="btnVolver" type="button">Volver</button>
+  <section class="card detalle-categoria" id="detalleCategoria" hidden></section>
+</main>
 
-  <script>
-    let liquidaciones = [];
-    let chart = null;
+<nav class="dock" aria-label="Navegación">
+  <button class="btn btn-sec" id="btnVolver" type="button">← Volver</button>
+</nav>
 
-    async function cargarLiquidaciones() {
-      const res = await fetch("/liquidaciones.json");
-      liquidaciones = await res.json();
-      renderTorta();
-    }
+<script>
+const COP = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-    function renderTorta() {
-      const desde = document.getElementById("desde").value;
-      const hasta = document.getElementById("hasta").value;
-      const categorias = {};
+const COLORES = ['#7a88ff', '#2ee6b6', '#ff6aa8', '#ffb84d', '#4aa8ff', '#b07bff', '#ff7a59', '#5ad1e6', '#9be564', '#f2d14a', '#9aa2c6'];
 
-      liquidaciones.forEach(lote => {
-        lote.gastos.forEach(g => {
-          if ( (!desde || g.fecha >= desde + '-01') && (!hasta || g.fecha <= hasta + '-31')) {
-            categorias[g.categoria] = (categorias[g.categoria] || 0) + g.monto;
-          }
-        });
-      });
+let liquidaciones = [];
+let chart = null;
+let categoriaActiva = null;
 
-      const ctx = document.getElementById("graficoTorta").getContext("2d");
-
-      if (chart) {
-        chart.destroy();
-      }
-
-chart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: Object.keys(categorias),
-    datasets: [{
-      data: Object.values(categorias),
-      backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff', '#ff9f40', '#e17055', '#00b894', '#fd79a8'],
-    }]
-  },
-  options: {
-    responsive: true,
-    onClick: function (evt, elements) {
-      if (!elements.length) return;
-
-      const index = elements[0].index;
-      const categoria = this.data.labels[index];
-
-      const desde = document.getElementById("desde").value;
-      const hasta = document.getElementById("hasta").value;
-
-      const gastosFiltrados = [];
-      liquidaciones.forEach(lote => {
-        lote.gastos.forEach(g => {
-          if (
-            g.categoria === categoria &&
-            (!desde || g.fecha >= desde + '-01') &&
-            (!hasta || g.fecha <= hasta + '-31')
-          ) {
-            gastosFiltrados.push(g);
-          }
-        });
-      });
-
-      mostrarDetalleCategoria(categoria, gastosFiltrados);
-    },
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          padding: 15,
-          font: { size: 14 },
-          boxWidth: 16,
-          boxHeight: 16,
-        }
-      },
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            const label = context.label || '';
-            const value = context.parsed || 0;
-            return label + ': $' + value.toFixed(2);
-          }
-        }
-      }
-    }
-  }
-});
-
-    }
-
-    function mostrarDetalleCategoria(nombreCategoria, gastosFiltrados) {
-  const detalle = document.getElementById("detalleCategoria");
-  const lista = gastosFiltrados.map(g => {
-    return `<li>
-      <strong>${g.descripcion}</strong> — $${g.monto.toLocaleString()}<br>
-      <small>${g.fecha} - ${g.autor}</small>
-    </li>`;
-  }).join('');
-
-  detalle.innerHTML = `
-    <h2 style="margin-top:0;">${nombreCategoria}</h2>
-    <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.75rem;">
-      ${lista}
-    </ul>
-  `;
-  detalle.style.display = 'block';
+function esc(texto) {
+  return String(texto ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
+const cssVar = nombre => getComputedStyle(document.documentElement).getPropertyValue(nombre).trim();
 
-    document.getElementById("desde").addEventListener("change", renderTorta);
-    document.getElementById("hasta").addEventListener("change", renderTorta);
+async function cargarLiquidaciones() {
+  try {
+    const res = await fetch("/liquidaciones.json");
+    const data = await res.json();
+    liquidaciones = Array.isArray(data) ? data : [];
+  } catch {
+    liquidaciones = [];
+  }
+  render();
+}
 
-    document.getElementById("btnVolver").addEventListener("click", () => {
-      window.history.back();
-    });
+// Gastos dentro del rango de meses seleccionado
+function gastosFiltrados() {
+  const desde = document.getElementById("desde").value;
+  const hasta = document.getElementById("hasta").value;
+  return liquidaciones
+    .flatMap(lote => lote.gastos || [])
+    .filter(g => (!desde || g.fecha >= desde + '-01') && (!hasta || g.fecha <= hasta + '-31'));
+}
 
-    cargarLiquidaciones();
-  </script>
+function agruparPorCategoria(gastos) {
+  const categorias = {};
+  gastos.forEach(g => {
+    const cat = g.categoria || "Otros";
+    categorias[cat] = (categorias[cat] || 0) + g.monto;
+  });
+  return Object.entries(categorias).sort((a, b) => b[1] - a[1]);
+}
+
+function render() {
+  const gastos = gastosFiltrados();
+  const grupos = agruparPorCategoria(gastos);
+  const total = grupos.reduce((acc, [, monto]) => acc + monto, 0);
+
+  document.getElementById("totalMonto").textContent = COP.format(total);
+  document.getElementById("totalTexto").textContent =
+    gastos.length ? `${gastos.length} ${gastos.length === 1 ? "gasto" : "gastos"} en ${grupos.length} ${grupos.length === 1 ? "categoría" : "categorías"}` : "";
+
+  if (categoriaActiva && !grupos.some(([cat]) => cat === categoriaActiva)) categoriaActiva = null;
+
+  renderGrafico(grupos);
+  renderRanking(grupos, total);
+  renderDetalle(gastos);
+}
+
+function renderGrafico(grupos) {
+  const canvas = document.getElementById("graficoTorta");
+  if (chart) chart.destroy();
+
+  canvas.parentElement.style.display = grupos.length ? "block" : "none";
+  if (!grupos.length) return;
+
+  Chart.defaults.font.family = "Manrope, system-ui, sans-serif";
+  Chart.defaults.color = cssVar("--muted");
+
+  chart = new Chart(canvas.getContext("2d"), {
+    type: 'doughnut',
+    data: {
+      labels: grupos.map(([cat]) => cat),
+      datasets: [{
+        data: grupos.map(([, monto]) => monto),
+        backgroundColor: grupos.map((_, i) => COLORES[i % COLORES.length]),
+        borderColor: cssVar("--surface"),
+        borderWidth: 3,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '58%',
+      onClick: (evt, elements) => {
+        if (!elements.length) return;
+        seleccionarCategoria(grupos[elements[0].index][0]);
+      },
+      plugins: {
+        legend: { display: false }, // el ranking de abajo hace de leyenda
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.label}: ${COP.format(ctx.parsed || 0)}`
+          }
+        }
+      }
+    }
+  });
+}
+
+function renderRanking(grupos, total) {
+  const cont = document.getElementById("ranking");
+
+  if (!grupos.length) {
+    cont.innerHTML = `<div class="vacio"><strong>Sin liquidaciones en este periodo</strong>Prueba con otro rango de meses o toca “Todo”.</div>`;
+    return;
+  }
+
+  cont.innerHTML = grupos.map(([cat, monto], i) => {
+    const pct = total ? (monto / total) * 100 : 0;
+    const color = COLORES[i % COLORES.length];
+    return `
+      <button type="button" class="ranking-item" data-cat="${esc(cat)}" aria-pressed="${cat === categoriaActiva}">
+        <span class="punto" style="background:${color}"></span>
+        <span class="ranking-nombre">${esc(cat)}</span>
+        <span class="ranking-monto">${COP.format(monto)}</span>
+        <span class="ranking-pct">${pct.toFixed(1)}% del total</span>
+        <span class="barra"><i style="width:${pct}%; background:${color}"></i></span>
+      </button>`;
+  }).join("");
+
+  cont.querySelectorAll(".ranking-item").forEach(btn => {
+    btn.addEventListener("click", () => seleccionarCategoria(btn.dataset.cat));
+  });
+}
+
+function seleccionarCategoria(cat) {
+  categoriaActiva = categoriaActiva === cat ? null : cat;
+  render();
+  if (categoriaActiva) {
+    document.getElementById("detalleCategoria").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function renderDetalle(gastos) {
+  const detalle = document.getElementById("detalleCategoria");
+
+  if (!categoriaActiva) {
+    detalle.hidden = true;
+    return;
+  }
+
+  const items = gastos.filter(g => (g.categoria || "Otros") === categoriaActiva);
+  const subtotal = items.reduce((acc, g) => acc + g.monto, 0);
+
+  detalle.innerHTML = `
+    <h2 class="card-title">${esc(categoriaActiva)} · ${COP.format(subtotal)}</h2>
+    <ul class="detalle-lista">
+      ${items.map(g => `
+        <li data-autor="${esc(String(g.autor).toLowerCase())}">
+          <div>
+            <strong>${esc(g.descripcion)}</strong>
+            <small>${esc(g.fecha)} · ${esc(g.autor)}</small>
+          </div>
+          <span class="monto">${COP.format(g.monto)}</span>
+        </li>`).join("")}
+    </ul>`;
+  detalle.hidden = false;
+}
+
+/* ---------------- Filtros ---------------- */
+
+document.getElementById("desde").addEventListener("change", render);
+document.getElementById("hasta").addEventListener("change", render);
+
+document.getElementById("atajo-mes").addEventListener("click", () => {
+  const hoy = new Date();
+  const mes = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}`;
+  document.getElementById("desde").value = mes;
+  document.getElementById("hasta").value = mes;
+  render();
+});
+
+document.getElementById("atajo-todo").addEventListener("click", () => {
+  document.getElementById("desde").value = "";
+  document.getElementById("hasta").value = "";
+  render();
+});
+
+document.getElementById("btnVolver").addEventListener("click", () => {
+  if (window.history.length > 1) window.history.back();
+  else window.location.href = "index.html";
+});
+
+// Al cambiar de tema se redibuja el gráfico con los colores nuevos
+window.addEventListener("tema-cambiado", render);
+
+cargarLiquidaciones();
+</script>
 </body>
 </html>

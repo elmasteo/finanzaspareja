@@ -2,96 +2,153 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1120" />
   <title>Finanzas en Pareja</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header>
-  <h1>Finanzas en Pareja - Adriana - Santiago</h1>
-</header>
+<main class="app">
+  <header class="topbar">
+    <div>
+      <h1>Finanzas en pareja</h1>
+      <p class="sub">Adriana y Santiago</p>
+    </div>
+    <button id="modoToggle" class="icon-btn" type="button" aria-label="Cambiar tema">🌙</button>
+  </header>
 
-<button id="modoToggle">🌙 Modo Oscuro</button>
+  <section class="balance" id="balance" data-estado="balanceado" aria-live="polite">
+    <p class="balance-label">Saldo actual</p>
+    <p class="balance-monto" id="saldoMonto">$ 0</p>
+    <div class="balance-pie">
+      <div class="flujo" id="flujo" hidden></div>
+      <p class="balance-texto" id="saldoTexto">Cargando...</p>
+    </div>
+  </section>
 
-<section class="card">
-  <strong>Saldo total:</strong>
-  <p id="saldoTexto">Cargando...</p>
-</section>
+  <section class="card">
+    <h2 class="card-title">Nuevo gasto</h2>
+    <form class="gasto-form" id="form-gasto" novalidate>
+      <fieldset class="segmentos">
+        <legend>Pagó</legend>
+        <label class="opcion santiago">
+          <input type="radio" name="autor" value="Santiago" checked />
+          <span>Santiago</span>
+        </label>
+        <label class="opcion adriana">
+          <input type="radio" name="autor" value="Adriana" />
+          <span>Adriana</span>
+        </label>
+      </fieldset>
 
-<section class="card gasto-form">
-  <label>Pagado por:</label>
-  <select id="autor">
-    <option value="Santiago">Santiago</option>
-    <option value="Adriana">Adriana</option>
-  </select>
-  <input type="text" id="descripcion" placeholder="Descripción del gasto" />
-  <input type="number" id="monto" placeholder="Monto" step="0.01" />
-  <select id="tipo-division">
-    <option value="total">Se debe el total</option>
-    <option value="mitad">Mitad y mitad</option>
-    <option value="predefinido">47% - 53%</option>
-    <option value="porcentaje">Porcentaje</option>
-  </select>
-  <div class="row" id="porcentaje-fields" style="display: none">
-    <div><input type="number" id="porcentaje-Santiago" placeholder="% Santiago" max="100" /></div>
-    <div><input type="number" id="porcentaje-Adriana" placeholder="% Adriana" max="100" /></div>
+      <label class="campo">
+        <span>Descripción</span>
+        <input type="text" id="descripcion" placeholder="Ej: Almuerzo, Uber, mercado" autocomplete="off" />
+      </label>
+
+      <label class="campo">
+        <span>Monto</span>
+        <div class="monto-wrap">
+          <input type="number" id="monto" placeholder="0" step="0.01" inputmode="decimal" />
+        </div>
+      </label>
+
+      <fieldset class="divisiones">
+        <legend>¿Cómo se divide?</legend>
+        <label class="opcion">
+          <input type="radio" name="tipo-division" value="total" checked />
+          <span>Total<small>El otro debe todo</small></span>
+        </label>
+        <label class="opcion">
+          <input type="radio" name="tipo-division" value="mitad" />
+          <span>50 / 50<small>Mitad y mitad</small></span>
+        </label>
+        <label class="opcion">
+          <input type="radio" name="tipo-division" value="predefinido" />
+          <span>47 / 53<small>Santiago / Adriana</small></span>
+        </label>
+        <label class="opcion">
+          <input type="radio" name="tipo-division" value="porcentaje" />
+          <span>Otro %<small>Tú eliges</small></span>
+        </label>
+      </fieldset>
+
+      <div class="porcentajes" id="porcentaje-fields">
+        <label class="campo">
+          <span>% Santiago</span>
+          <input type="number" id="porcentaje-Santiago" placeholder="0" min="0" max="100" inputmode="numeric" />
+        </label>
+        <label class="campo">
+          <span>% Adriana</span>
+          <input type="number" id="porcentaje-Adriana" placeholder="0" min="0" max="100" inputmode="numeric" />
+        </label>
+      </div>
+
+      <button class="btn btn-pri btn-block" type="submit">Agregar gasto</button>
+    </form>
+  </section>
+
+  <div class="lista-header">
+    <h2>Gastos pendientes</h2>
+    <span class="contador" id="contador">0</span>
   </div>
-  <button onclick="agregarGasto()">Agregar gasto</button>
-</section>
+  <section id="gastos-lista" aria-live="polite"></section>
+</main>
 
-<section id="gastos-lista"></section>
-
-<button id="btn-liquidar-todo" onclick="liquidarDeudas()">💰</button>
-<a href="liquidaciones.html">
-  <button>📊 Ver Liquidaciones</button>
-</a>
+<nav class="dock" aria-label="Acciones principales">
+  <a class="btn btn-sec" href="liquidaciones.html">📊 Liquidaciones</a>
+  <button class="btn btn-pri" id="btn-liquidar-todo" type="button" onclick="liquidarDeudas()">💰 Liquidar todo</button>
+</nav>
 
 <script>
+let gastos = [];
+let liquidaciones = [];
+
+const formatoCOP = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+function formatearCOP(valor) {
+  return formatoCOP.format(valor);
+}
+
+// Evita que texto escrito por el usuario se interprete como HTML
+function esc(texto) {
+  return String(texto ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* ---------------- Acceso con clave ---------------- */
+
+function pedirClave() {
+  return new Promise(resolve => {
+    const overlay = document.createElement("div");
+    overlay.className = "lock";
+    overlay.innerHTML = `
+      <form class="lock-card">
+        <h2>🔒 Finanzas en pareja</h2>
+        <p>Ingresa tu clave para continuar.</p>
+        <input type="password" placeholder="Clave" autocomplete="current-password" required />
+        <button class="btn btn-pri" type="submit">Acceder</button>
+      </form>`;
+    document.body.appendChild(overlay);
+
+    const form = overlay.querySelector("form");
+    const input = overlay.querySelector("input");
+    input.focus();
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const val = input.value;
+      overlay.remove();
+      resolve(val);
+    });
+  });
+}
+
 async function init() {
-  const clave = await new Promise(resolve => {
-  const overlay = document.createElement("div");
-  overlay.style.position = "fixed";
-  overlay.style.top = 0;
-  overlay.style.left = 0;
-  overlay.style.width = "100vw";
-  overlay.style.height = "100vh";
-  overlay.style.background = "rgba(0,0,0,0.8)";
-  overlay.style.display = "flex";
-  overlay.style.flexDirection = "column";
-  overlay.style.justifyContent = "center";
-  overlay.style.alignItems = "center";
-  overlay.style.zIndex = 9999;
-
-  const input = document.createElement("input");
-  input.type = "password";
-  input.placeholder = "🔒 Ingresa tu clave";
-  input.style.padding = "10px";
-  input.style.fontSize = "16px";
-  input.style.borderRadius = "5px";
-  input.style.border = "1px solid #ccc";
-  input.style.marginBottom = "10px";
-
-  const btn = document.createElement("button");
-  btn.textContent = "Acceder";
-  btn.style.padding = "10px 20px";
-  btn.style.fontSize = "16px";
-  btn.style.border = "none";
-  btn.style.borderRadius = "5px";
-  btn.style.cursor = "pointer";
-
-  btn.onclick = () => {
-    const val = input.value;
-    document.body.removeChild(overlay);
-    resolve(val);
-  };
-
-  overlay.appendChild(input);
-  overlay.appendChild(btn);
-  document.body.appendChild(overlay);
-});
-
+  const clave = await pedirClave();
 
   const res = await fetch('/.netlify/functions/validarClave', {
     method: 'POST',
@@ -103,11 +160,10 @@ async function init() {
 
   if (!autorizado) {
     alert("Clave incorrecta. Acceso denegado.");
-    document.body.innerHTML = "<h2 style='text-align:center; margin-top:20%'>🚫 Acceso no autorizado</h2>";
+    document.body.innerHTML = "<h2 class='denegado'>🚫 Acceso no autorizado</h2>";
     return;
   }
 
-  // Si la clave es correcta, continuar:
   const resGastos = await fetch('/gastos.json');
   const dataGastos = await resGastos.json();
   gastos = dataGastos.gastos || [];
@@ -123,116 +179,163 @@ async function init() {
   renderGastos();
 }
 
-// Llama init al cargar
 init();
 
-  document.getElementById("tipo-division").addEventListener("change", e => {
-  const tipo = e.target.value;
-  document.getElementById("porcentaje-fields").style.display =
-    tipo === "porcentaje" ? "flex" : "none";
-});
+/* ---------------- Telegram ---------------- */
 
- async function guardarGastos() {
-   await fetch('/.netlify/functions/guardarGasto', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(gastos)
-    });
-  }
-
-const formatoCOP = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0, maximumFractionDigits: 0 });
-// Redefinir la función que convierte a formato peso colombiano
-function formatearCOP(valor) {
-  return formatoCOP.format(valor);
+// Los chat IDs viven en el servidor (TELEGRAM_CHAT_IDS), así que basta con enviar el texto una vez.
+function enviarTelegram(mensaje) {
+  return fetch("/.netlify/functions/enviarTelegram", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: mensaje })
+  })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.success) console.error("Error enviando a Telegram:", data);
+      else if (data.fallidos?.length) console.warn("Chats que no recibieron el mensaje:", data.fallidos);
+    })
+    .catch(err => console.error("Error enviando a Telegram:", err));
 }
 
-  function agregarGasto() {
+/* ---------------- Formulario ---------------- */
 
-    const autor = document.getElementById("autor").value;
-    const descripcion = document.getElementById("descripcion").value.trim();
-    const monto = parseFloat(document.getElementById("monto").value);
-    const fecha = new Date().toISOString().split("T")[0]; // formato YYYY-MM-DD
-    const categoria = categorizarDescripcion(descripcion);
+const valorSeleccionado = nombre => document.querySelector(`input[name="${nombre}"]:checked`).value;
 
-    if (!descripcion || isNaN(monto) || monto <= 0) return alert("Complete todos los campos correctamente");
+document.querySelectorAll('input[name="tipo-division"]').forEach(radio => {
+  radio.addEventListener("change", () => {
+    document.getElementById("porcentaje-fields")
+      .classList.toggle("visible", valorSeleccionado("tipo-division") === "porcentaje");
+  });
+});
 
-    const tipoSeleccionado = document.getElementById("tipo-division").value;
+// Al escribir un porcentaje se completa el otro automáticamente
+function enlazarPorcentajes(origen, destino) {
+  const a = document.getElementById(origen);
+  const b = document.getElementById(destino);
+  a.addEventListener("input", () => {
+    const v = parseInt(a.value);
+    b.value = isNaN(v) ? "" : Math.min(100, Math.max(0, 100 - v));
+  });
+}
+enlazarPorcentajes("porcentaje-Santiago", "porcentaje-Adriana");
+enlazarPorcentajes("porcentaje-Adriana", "porcentaje-Santiago");
 
-    let tipo = tipoSeleccionado;
-    let porcentajeSantiago = 50, porcentajeAdriana = 50;
+document.getElementById("form-gasto").addEventListener("submit", e => {
+  e.preventDefault();
+  agregarGasto();
+});
 
-    if (tipoSeleccionado === "porcentaje") {
-      porcentajeSantiago = parseInt(document.getElementById("porcentaje-Santiago").value) || 0;
-      porcentajeAdriana = parseInt(document.getElementById("porcentaje-Adriana").value) || 0;
+async function guardarGastos() {
+  await fetch('/.netlify/functions/guardarGasto', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(gastos)
+  });
+}
 
-      if (porcentajeSantiago + porcentajeAdriana !== 100) {
-        return alert("Los porcentajes deben sumar 100%");
-      }
+function guardarGastoIndividual(gasto) {
+  fetch('/.netlify/functions/guardarGasto', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(gasto)
+  }).then(r => r.json())
+    .then(data => {
+      if (!data.success) console.error("Error guardando gasto:", data.error);
+    });
+}
+
+function agregarGasto() {
+  const autor = valorSeleccionado("autor");
+  const descripcion = document.getElementById("descripcion").value.trim();
+  const monto = parseFloat(document.getElementById("monto").value);
+  const fecha = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+  const categoria = categorizarDescripcion(descripcion);
+
+  if (!descripcion || isNaN(monto) || monto <= 0) return alert("Complete todos los campos correctamente");
+
+  const tipoSeleccionado = valorSeleccionado("tipo-division");
+
+  let tipo = tipoSeleccionado;
+  let porcentajeSantiago = 50, porcentajeAdriana = 50;
+
+  if (tipoSeleccionado === "porcentaje") {
+    porcentajeSantiago = parseInt(document.getElementById("porcentaje-Santiago").value) || 0;
+    porcentajeAdriana = parseInt(document.getElementById("porcentaje-Adriana").value) || 0;
+
+    if (porcentajeSantiago + porcentajeAdriana !== 100) {
+      return alert("Los porcentajes deben sumar 100%");
     }
-
-    if (tipoSeleccionado === "predefinido") {
-      porcentajeSantiago = 47;
-      porcentajeAdriana = 53;
-      tipo = "porcentaje";
-    }
-
-    const nuevoGasto = {
-      id: Date.now(),
-      autor,
-      descripcion,
-      monto,
-      tipo,
-      porcentajeSantiago,
-      porcentajeAdriana,
-      fecha,
-      categoria
-    };
-    gastos.push(nuevoGasto);
-    guardarGastoIndividual(nuevoGasto);
-    const mensaje = `🔔 Nuevo gasto agregado:\n\nDescripción: "${descripcion}"\nMonto: ${monto}\nAgregado por ${autor}\nFecha: ${fecha}\nDivisión: ${getDivisionDetalle(nuevoGasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
-
-    enviarWhatsapp(mensaje);
-
-    renderGastos();
   }
 
-  function categorizarDescripcion(desc) {
- const mapa = {
-  Comida: [
-    "almuerzo", "cena", "comida", "hamburguesa", "restaurante", "taco", "desayuno", "pizza", "pollo",
-    "carne", "empanada", "antojito", "sándwich", "perro", "comida rápida", "arepa", "antojitos"
-  ],
-  Transporte: [
-    "uber", "taxi", "bus", "pasaje", "metro", "transporte", "parqueadero", "gasolina", "peaje", "viaje", "conductor"
-  ],
-  Servicios: [
-    "agua", "luz", "gas", "internet", "teléfono", "servicio", "energía", "recibo", "factura", "tv", "streaming"
-  ],
-  Hogar: [
-    "arriendo", "mercado", "supermercado", "limpieza", "aseo", "hogar", "d1", "exito", "almacén", "fruver",
-    "queso", "compra casa", "detergente"
-  ],
-  Entretenimiento: [
-    "cine", "netflix", "spotify", "juego", "fiesta", "licor", "cerveza", "rumba", "bar", "concierto", "play", "ocio", "discoteca"
-  ],
-  Salud: [
-    "medicina", "doctor", "salud", "farmacia", "dentista", "consulta", "cita médica", "oído", "tratamiento", "clínica"
-  ],
-  Vestuario: [
-    "ropa", "pantalón", "chaqueta", "camisa", "zapato", "tenis", "blusa", "jean", "vestido", "ropa interior", "copa"
-  ],
-  Regalos: [
-    "regalo", "cumpleaños", "detalles", "obsequio", "bolsa regalo", "perfume", "sorpresa"
-  ],
-  Tecnologia: [
-    "celular", "computador", "tablet", "audífono", "teclado", "mouse", "pantalla", "tv", "electrónico"
-  ],
-  Mascotas: [
-    "mascota", "perro", "gato", "comida perro", "comida gato", "veterinario", "collar"
-  ],
-  Otros: []
-};
+  if (tipoSeleccionado === "predefinido") {
+    porcentajeSantiago = 47;
+    porcentajeAdriana = 53;
+    tipo = "porcentaje";
+  }
 
+  const nuevoGasto = {
+    id: Date.now(),
+    autor,
+    descripcion,
+    monto,
+    tipo,
+    porcentajeSantiago,
+    porcentajeAdriana,
+    fecha,
+    categoria
+  };
+  gastos.push(nuevoGasto);
+  guardarGastoIndividual(nuevoGasto);
+
+  const mensaje = `🔔 Nuevo gasto agregado:\n\nDescripción: "${descripcion}"\nMonto: ${formatearCOP(monto)}\nAgregado por ${autor}\nFecha: ${fecha}\nDivisión: ${getDivisionDetalle(nuevoGasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
+  enviarTelegram(mensaje);
+
+  // Limpiar el formulario para el siguiente gasto
+  document.getElementById("descripcion").value = "";
+  document.getElementById("monto").value = "";
+  document.getElementById("porcentaje-Santiago").value = "";
+  document.getElementById("porcentaje-Adriana").value = "";
+
+  renderGastos();
+}
+
+function categorizarDescripcion(desc) {
+  const mapa = {
+    Comida: [
+      "almuerzo", "cena", "comida", "hamburguesa", "restaurante", "taco", "desayuno", "pizza", "pollo",
+      "carne", "empanada", "antojito", "sándwich", "perro", "comida rápida", "arepa", "antojitos"
+    ],
+    Transporte: [
+      "uber", "taxi", "bus", "pasaje", "metro", "transporte", "parqueadero", "gasolina", "peaje", "viaje", "conductor"
+    ],
+    Servicios: [
+      "agua", "luz", "gas", "internet", "teléfono", "servicio", "energía", "recibo", "factura", "tv", "streaming"
+    ],
+    Hogar: [
+      "arriendo", "mercado", "supermercado", "limpieza", "aseo", "hogar", "d1", "exito", "almacén", "fruver",
+      "queso", "compra casa", "detergente"
+    ],
+    Entretenimiento: [
+      "cine", "netflix", "spotify", "juego", "fiesta", "licor", "cerveza", "rumba", "bar", "concierto", "play", "ocio", "discoteca"
+    ],
+    Salud: [
+      "medicina", "doctor", "salud", "farmacia", "dentista", "consulta", "cita médica", "oído", "tratamiento", "clínica"
+    ],
+    Vestuario: [
+      "ropa", "pantalón", "chaqueta", "camisa", "zapato", "tenis", "blusa", "jean", "vestido", "ropa interior", "copa"
+    ],
+    Regalos: [
+      "regalo", "cumpleaños", "detalles", "obsequio", "bolsa regalo", "perfume", "sorpresa"
+    ],
+    Tecnologia: [
+      "celular", "computador", "tablet", "audífono", "teclado", "mouse", "pantalla", "tv", "electrónico"
+    ],
+    Mascotas: [
+      "mascota", "perro", "gato", "comida perro", "comida gato", "veterinario", "collar"
+    ],
+    Otros: []
+  };
 
   const descLower = desc.toLowerCase();
   for (const [categoria, palabras] of Object.entries(mapa)) {
@@ -241,46 +344,12 @@ function formatearCOP(valor) {
   return "Otros";
 }
 
-function renderGastos() {
-  const cont = document.getElementById("gastos-lista");
-  cont.innerHTML = "";
+/* ---------------- Cálculo de saldo ---------------- */
+
+// Positivo: Adriana debe a Santiago · Negativo: Santiago debe a Adriana
+function calcularDeuda() {
   let deuda = 0;
-
-  for (let gasto of gastos) {
-    const div = document.createElement("div");
-    div.className = "gasto-item";
-    div.setAttribute("data-id", gasto.id);
-
-    const editable = gasto.editando === true;
-
-    div.innerHTML = `
-      <div class="acciones">
-        ${editable ? `
-          <button class="btn-guardar" onclick="guardarEdicion(${gasto.id})">✅</button>
-          <button class="btn-cancelar" onclick="cancelarEdicion(${gasto.id})">❌</button>
-        ` : `
-          <button class="btn-editar" onclick="iniciarEdicion(${gasto.id})">✏️</button>
-          <button class="btn-liquidar" onclick="liquidarGasto(${gasto.id})">💰</button>
-          <button class="btn-eliminar" onclick="eliminarGasto(${gasto.id})">🗑️</button>
-        `}
-      </div>
-      
-      <div class="contenido">
-        ${editable ? `
-          <input type="text" class="input-desc" value="${gasto.descripcion}">
-          <input type="number" class="input-monto" step="0.01" value="${formatearCOP(gasto.monto)}">
-        ` : `
-          <div><strong>${gasto.descripcion}</strong></div>
-          <div>${formatearCOP(gasto.monto)}</div>
-        `}
-      </div>
-      <div class="detalle">${getDetalleGasto(gasto)}</div>
-      <div class="meta">${gasto.fecha}</div>
-    `;
-
-    cont.appendChild(div);
-
-    // Calcular deuda
+  for (const gasto of gastos) {
     if (gasto.tipo === "total") {
       deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
     } else if (gasto.tipo === "mitad") {
@@ -292,195 +361,95 @@ function renderGastos() {
       deuda += gasto.autor === "Santiago" ? a : -s;
     }
   }
-
-  let texto = "Saldo balanceado";
-  if (deuda > 0.01) texto = `Adriana debe ${formatearCOP(Math.abs(deuda))} a Santiago`;
-  else if (deuda < -0.01) texto = `Santiago debe ${formatearCOP(Math.abs(deuda))} a Adriana`;
-  document.getElementById("saldoTexto").textContent = texto;
+  return deuda;
 }
-
-
-function editarCampo(id, campo, valor) {
-  const gasto = gastos.find(g => g.id === id);
-  if (!gasto) return;
-
-  if (campo === "descripcion") {
-    gasto.descripcion = valor.trim();
-    gasto.categoria = categorizarDescripcion(valor);
-  } else if (campo === "monto") {
-    const nuevoMonto = parseFloat(valor);
-    if (isNaN(nuevoMonto) || nuevoMonto <= 0) {
-      alert("Monto inválido");
-      renderGastos();
-      return;
-    }
-    gasto.monto = nuevoMonto;
-  }
-
-  guardarGastos();
-  renderGastos();
-
-  const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
-  enviarWhatsapp(mensaje);
-}
-
-
-
-function editarGasto(id) {
-  const gasto = gastos.find(g => g.id === id);
-  if (!gasto) return alert("Gasto no encontrado");
-
-  const nuevaDescripcion = prompt("Nueva descripción:", gasto.descripcion);
-  if (!nuevaDescripcion) return;
-
-  const nuevoMonto = parseFloat(prompt("Nuevo monto:", gasto.monto));
-  if (isNaN(nuevoMonto) || nuevoMonto <= 0) return alert("Monto inválido");
-
-  const nuevaDivision = prompt("Tipo de división (total/mitad/porcentaje):", gasto.tipo);
-  if (!["total", "mitad", "porcentaje"].includes(nuevaDivision)) return alert("Tipo inválido");
-
-  let porcentajeSantiago = 50, porcentajeAdriana = 50;
-
-  if (nuevaDivision === "porcentaje") {
-    porcentajeSantiago = parseInt(prompt("Porcentaje Santiago:", gasto.porcentajeSantiago)) || 0;
-    porcentajeAdriana = parseInt(prompt("Porcentaje Adriana:", gasto.porcentajeAdriana)) || 0;
-    if (porcentajeSantiago + porcentajeAdriana !== 100) return alert("Los porcentajes deben sumar 100%");
-  }
-
-  gasto.descripcion = nuevaDescripcion;
-  gasto.monto = nuevoMonto;
-  gasto.tipo = nuevaDivision;
-  gasto.porcentajeSantiago = porcentajeSantiago;
-  gasto.porcentajeAdriana = porcentajeAdriana;
-
-  guardarGastos();
-  renderGastos();
-
-  const mensaje = `🔄 Se ha actualizado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
-  enviarWhatsapp(mensaje);
-}
-
-async function eliminarGasto(id) {
-  if (!confirm("¿Eliminar este gasto? No se guardará en liquidaciones.")) return;
-
-  const gasto = gastos.find(g => g.id === id);
-  if (!gasto) return alert("Gasto no encontrado");
-
-  gastos = gastos.filter(g => g.id !== id);
-  await guardarGastos();
-  renderGastos();
-
-  const mensaje = `❌ Se eliminó un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}`;
-  enviarWhatsapp(mensaje);
-}
-
 
 function obtenerTextoDeudaActual() {
-  let deuda = 0;
-  for (let gasto of gastos) {
-    if (gasto.tipo === "total") {
-      deuda += gasto.autor === "Santiago" ? gasto.monto : -gasto.monto;
-    } else if (gasto.tipo === "mitad") {
-      const mitad = gasto.monto / 2;
-      deuda += gasto.autor === "Santiago" ? mitad : -mitad;
-    } else if (gasto.tipo === "porcentaje") {
-      const montoSantiago = (gasto.porcentajeSantiago / 100) * gasto.monto;
-      const montoAdriana = (gasto.porcentajeAdriana / 100) * gasto.monto;
-      const deberAdriana = gasto.autor === "Santiago" ? montoAdriana : -montoSantiago;
-      deuda += deberAdriana;
-    }
-  }
-
+  const deuda = calcularDeuda();
   if (Math.abs(deuda) < 0.01) return "Saldo balanceado";
-  if (deuda > 0.01) return `Adriana debe ${formatearCOP(deuda)} a Santiago`;
+  if (deuda > 0) return `Adriana debe ${formatearCOP(deuda)} a Santiago`;
   return `Santiago debe ${formatearCOP(Math.abs(deuda))} a Adriana`;
 }
 
+function renderSaldo() {
+  const deuda = calcularDeuda();
+  const balance = document.getElementById("balance");
+  const flujo = document.getElementById("flujo");
+  const avatar = (nombre) => `<span class="avatar ${nombre.toLowerCase()}" title="${nombre}">${nombre[0]}</span>`;
 
-async function liquidarGasto(id) {
-  if (!confirm("¿Seguro que deseas liquidar este gasto?")) return;
+  document.getElementById("saldoMonto").textContent = formatearCOP(Math.abs(deuda) < 0.01 ? 0 : Math.abs(deuda));
 
-  const gasto = gastos.find(g => g.id === id);
-  if (!gasto) return alert("Gasto no encontrado");
-
-  // Fecha actual para la liquidación
-  const fechaLiquidacion = new Date().toISOString().split("T")[0];
-
-  // Agregar gasto a liquidaciones
-  liquidaciones.push({
-    fecha: fechaLiquidacion,
-    gastos: [gasto]
-  });
-
-  // Guardar liquidaciones
-  await fetch('/.netlify/functions/guardarLiquidaciones', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(liquidaciones)
-  });
-
-  // Enviar notificación WhatsApp
-  const mensaje = `🔔 Se ha liquidado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
-  enviarWhatsapp(mensaje);
-
-  // Eliminar gasto de lista y guardar
-  gastos = gastos.filter(g => g.id !== id);
-  await guardarGastos();
-
-  renderGastos();
+  if (Math.abs(deuda) < 0.01) {
+    balance.dataset.estado = "balanceado";
+    document.getElementById("saldoTexto").textContent = "Están a mano 🎉";
+    flujo.hidden = true;
+  } else if (deuda > 0) {
+    balance.dataset.estado = "adriana-debe";
+    document.getElementById("saldoTexto").textContent = "Adriana le debe a Santiago";
+    flujo.innerHTML = `${avatar("Adriana")}<span>→</span>${avatar("Santiago")}`;
+    flujo.hidden = false;
+  } else {
+    balance.dataset.estado = "santiago-debe";
+    document.getElementById("saldoTexto").textContent = "Santiago le debe a Adriana";
+    flujo.innerHTML = `${avatar("Santiago")}<span>→</span>${avatar("Adriana")}`;
+    flujo.hidden = false;
+  }
 }
 
-async function liquidarDeudas() {
-  if (!confirm("¿Seguro que deseas eliminar todos los gastos?")) return;
+/* ---------------- Lista de gastos ---------------- */
 
-  const fechaLiquidacion = new Date().toISOString().split("T")[0];
-  const lote = {
-    fecha: fechaLiquidacion,
-    gastos: [...gastos]
-  };
-  liquidaciones.push(lote);
+function renderGastos() {
+  const cont = document.getElementById("gastos-lista");
+  cont.innerHTML = "";
+  document.getElementById("contador").textContent = gastos.length;
 
-  await fetch('/.netlify/functions/guardarLiquidaciones', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(liquidaciones)
-  });
+  if (gastos.length === 0) {
+    cont.innerHTML = `<div class="vacio"><strong>No hay gastos pendientes</strong>Agrega el primero en el formulario de arriba.</div>`;
+  }
 
- const detalle = gastos.map(g => `- ${g.descripcion} (${g.monto})`).join("\n");
-  enviarWhatsapp(`🔔 Se ha generado una liquidación:\n\n${detalle}`);
+  for (const gasto of gastos) {
+    const div = document.createElement("div");
+    div.className = "gasto-item";
+    div.setAttribute("data-id", gasto.id);
+    div.setAttribute("data-autor", String(gasto.autor).toLowerCase());
 
+    const editable = gasto.editando === true;
 
-  gastos = [];
-  guardarGastos();
-  renderGastos();
-}
+    div.innerHTML = `
+      <div class="gasto-top">
+        ${editable ? `
+          <div class="contenido">
+            <input type="text" class="input-desc" value="${esc(gasto.descripcion)}" aria-label="Descripción">
+            <input type="number" class="input-monto" step="0.01" inputmode="decimal" value="${gasto.monto}" aria-label="Monto">
+          </div>
+        ` : `
+          <div>
+            <h3 class="gasto-desc">${esc(gasto.descripcion)}</h3>
+            <span class="categoria">${esc(gasto.categoria || "Otros")}</span>
+          </div>
+          <div class="gasto-monto">${formatearCOP(gasto.monto)}</div>
+        `}
+      </div>
+      <p class="detalle">${esc(getDetalleGasto(gasto))}</p>
+      <div class="gasto-pie">
+        <span class="meta">${esc(gasto.autor)} · ${esc(gasto.fecha)}</span>
+        <div class="acciones">
+          ${editable ? `
+            <button type="button" class="icon-btn btn-guardar" aria-label="Guardar cambios" onclick="guardarEdicion(${gasto.id})">✅</button>
+            <button type="button" class="icon-btn btn-cancelar" aria-label="Cancelar edición" onclick="cancelarEdicion(${gasto.id})">❌</button>
+          ` : `
+            <button type="button" class="icon-btn btn-editar" aria-label="Editar gasto" onclick="iniciarEdicion(${gasto.id})">✏️</button>
+            <button type="button" class="icon-btn btn-liquidar" aria-label="Liquidar gasto" onclick="liquidarGasto(${gasto.id})">💰</button>
+            <button type="button" class="icon-btn btn-eliminar" aria-label="Eliminar gasto" onclick="eliminarGasto(${gasto.id})">🗑️</button>
+          `}
+        </div>
+      </div>
+    `;
 
-async function verLiquidaciones() {
-  const res = await fetch("/liquidaciones.json");
-  const data = await res.json();
-  liquidaciones = data;
+    cont.appendChild(div);
+  }
 
-  const mes = prompt("Filtrar por mes (formato YYYY-MM, ejemplo 2025-06):");
-
-  const resultados = liquidaciones.flatMap(lote => {
-    return lote.gastos
-      .filter(g => g.fecha.startsWith(mes))
-      .map(g => `${g.fecha} - ${g.descripcion} (${g.monto}) [${g.categoria}]`);
-  });
-
-  alert("📅 Resultados:\n\n" + resultados.join("\n"));
-}
-
-
- function guardarGastoIndividual(gasto) {
-  fetch('/.netlify/functions/guardarGasto', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(gasto)
-  }).then(r => r.json())
-    .then(data => {
-      if (!data.success) console.error("Error guardando gasto:", data.error);
-    });
+  renderSaldo();
 }
 
 function getDivisionDetalle(gasto) {
@@ -501,6 +470,34 @@ function getDivisionDetalle(gasto) {
     Adriana: ${formatearCOP(a)} - ${gasto.porcentajeAdriana}%`;
   }
 }
+
+function getDetalleGasto(gasto) {
+  const esSantiago = gasto.autor === "Santiago";
+  const otro = esSantiago ? "Adriana" : "Santiago";
+
+  if (gasto.tipo === "total") {
+    return esSantiago
+      ? `Adriana debe a Santiago: ${formatearCOP(gasto.monto)} (100%)`
+      : `Santiago debe a Adriana: ${formatearCOP(gasto.monto)} (100%)`;
+  }
+
+  if (gasto.tipo === "mitad") {
+    const mitad = gasto.monto / 2;
+    return `${gasto.autor} pagó ${formatearCOP(gasto.monto)}, ${otro} debe ${formatearCOP(mitad)} (50%)`;
+  }
+
+  const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
+  const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
+
+  const porcentajeAutor = esSantiago ? gasto.porcentajeSantiago : gasto.porcentajeAdriana;
+  const deudaOtro = esSantiago ? a : s;
+  const porcentajeOtro = esSantiago ? gasto.porcentajeAdriana : gasto.porcentajeSantiago;
+
+  return `${gasto.autor} pagó ${formatearCOP(gasto.monto)} (${porcentajeAutor}%)
+${otro} debe ${formatearCOP(deudaOtro)} (${porcentajeOtro}%)`;
+}
+
+/* ---------------- Edición, eliminación y liquidación ---------------- */
 
 function iniciarEdicion(id) {
   const gasto = gastos.find(g => g.id === id);
@@ -538,61 +535,72 @@ function guardarEdicion(id) {
   renderGastos();
 
   const mensaje = `✏️ Gasto actualizado:\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\nDivisión: ${getDivisionDetalle(gasto)}\n\n${obtenerTextoDeudaActual()}\n\n🔗 https://finanzaspareja.netlify.app`;
-  enviarWhatsapp(mensaje);
+  enviarTelegram(mensaje);
 }
 
-function getDetalleGasto(gasto) {
-  const esSantiago = gasto.autor === "Santiago";
-  const otro = esSantiago ? "Adriana" : "Santiago";
+async function eliminarGasto(id) {
+  if (!confirm("¿Eliminar este gasto? No se guardará en liquidaciones.")) return;
 
-  if (gasto.tipo === "total") {
-    return esSantiago
-      ? `Adriana debe a Santiago: ${formatearCOP(gasto.monto)} (100%)`
-      : `Santiago debe a Adriana: ${formatearCOP(gasto.monto)} (100%)`;
-  }
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return alert("Gasto no encontrado");
 
-  if (gasto.tipo === "mitad") {
-    const mitad = gasto.monto / 2;
-    return `${gasto.autor} pagó ${formatearCOP(gasto.monto)}, ${otro} debe ${formatearCOP(mitad)} (50%)`;
-  }
+  gastos = gastos.filter(g => g.id !== id);
+  await guardarGastos();
+  renderGastos();
 
-const s = (gasto.porcentajeSantiago / 100) * gasto.monto;
-const a = (gasto.porcentajeAdriana / 100) * gasto.monto;
-
-const pagoAutor = esSantiago ? s : a;
-const porcentajeAutor = esSantiago ? gasto.porcentajeSantiago : gasto.porcentajeAdriana;
-
-const deudaOtro = esSantiago ? a : s;
-const porcentajeOtro = esSantiago ? gasto.porcentajeAdriana : gasto.porcentajeSantiago;
-
-return `${gasto.autor} pagó ${formatearCOP(gasto.monto)} (${porcentajeAutor}%)
-${otro} debe ${formatearCOP(deudaOtro)} (${porcentajeOtro}%)`;
+  const mensaje = `❌ Se eliminó un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}`;
+  enviarTelegram(mensaje);
 }
 
-
-
-function enviarWhatsapp(mensaje) {
-  const numeros = ["573219779439", "573157862008"];
-  numeros.forEach(num => {
-    fetch("/.netlify/functions/enviarWhatsapp", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ number: num, text: mensaje })
-    });
+async function guardarLiquidaciones() {
+  await fetch('/.netlify/functions/guardarLiquidaciones', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(liquidaciones)
   });
 }
 
-document.body.classList.add("dark");
+async function liquidarGasto(id) {
+  if (!confirm("¿Seguro que deseas liquidar este gasto?")) return;
 
-const toggle = document.getElementById("modoToggle");
-toggle.textContent = document.body.classList.contains("dark") ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+  const gasto = gastos.find(g => g.id === id);
+  if (!gasto) return alert("Gasto no encontrado");
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  toggle.textContent = document.body.classList.contains("dark") ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
-});
+  const fechaLiquidacion = new Date().toISOString().split("T")[0];
 
-  
+  liquidaciones.push({
+    fecha: fechaLiquidacion,
+    gastos: [gasto]
+  });
+  await guardarLiquidaciones();
+
+  const mensaje = `🔔 Se ha liquidado un gasto:\n\nDescripción: "${gasto.descripcion}"\nMonto: ${formatearCOP(gasto.monto)}\nAgregado por ${gasto.autor}\nFecha: ${gasto.fecha}\n\nRevísalo aquí: https://finanzaspareja.netlify.app`;
+  enviarTelegram(mensaje);
+
+  gastos = gastos.filter(g => g.id !== id);
+  await guardarGastos();
+
+  renderGastos();
+}
+
+async function liquidarDeudas() {
+  if (gastos.length === 0) return alert("No hay gastos para liquidar");
+  if (!confirm("¿Seguro que deseas eliminar todos los gastos?")) return;
+
+  const fechaLiquidacion = new Date().toISOString().split("T")[0];
+  liquidaciones.push({
+    fecha: fechaLiquidacion,
+    gastos: [...gastos]
+  });
+  await guardarLiquidaciones();
+
+  const detalle = gastos.map(g => `- ${g.descripcion} (${formatearCOP(g.monto)})`).join("\n");
+  enviarTelegram(`🔔 Se ha generado una liquidación:\n\n${detalle}`);
+
+  gastos = [];
+  await guardarGastos();
+  renderGastos();
+}
 </script>
 </body>
 </html>
