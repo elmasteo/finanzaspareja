@@ -274,6 +274,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-10-31",
       "categoria": "Transporte"
+    },
+    {
+      "id": 1793578687966,
+      "autor": "Adriana",
+      "descripcion": "Boyaca",
+      "monto": 290000,
+      "tipo": "total",
+      "porcentajeSantiago": 50,
+      "porcentajeAdriana": 50,
+      "fecha": "2026-11-02",
+      "categoria": "Otros"
     }
   ]
 }
