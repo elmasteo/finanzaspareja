@@ -133,17 +133,6 @@
       "categoria": "Comida"
     },
     {
-      "id": 1792104531151,
-      "autor": "Santiago",
-      "descripcion": "Lavada Carro",
-      "monto": 36000,
-      "tipo": "porcentaje",
-      "porcentajeSantiago": 47,
-      "porcentajeAdriana": 53,
-      "fecha": "2026-10-15",
-      "categoria": "Otros"
-    },
-    {
       "id": 1792377514827,
       "autor": "Santiago",
       "descripcion": "Gasolina",
@@ -287,7 +276,7 @@
       "categoria": "Otros"
     },
     {
-      "id": 1793658262032,
+      "id": 1793658261701,
       "autor": "Adriana",
       "descripcion": "Gasolina",
       "monto": 108967,
