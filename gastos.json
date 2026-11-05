@@ -340,6 +340,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-04",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1793902386851,
+      "autor": "Santiago",
+      "descripcion": "Recibo - Luz",
+      "monto": 94040,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-05",
+      "categoria": "Servicios"
     }
   ]
 }
