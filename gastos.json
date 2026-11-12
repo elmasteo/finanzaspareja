@@ -384,6 +384,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-12",
       "categoria": "Otros"
+    },
+    {
+      "id": 1794519534586,
+      "autor": "Santiago",
+      "descripcion": "Riel de cajón",
+      "monto": 15500,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-12",
+      "categoria": "Otros"
     }
   ]
 }
