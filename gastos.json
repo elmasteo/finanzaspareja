@@ -395,6 +395,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-12",
       "categoria": "Otros"
+    },
+    {
+      "id": 1794519552609,
+      "autor": "Adriana",
+      "descripcion": "Lavada carro",
+      "monto": 33000,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-12",
+      "categoria": "Otros"
     }
   ]
 }
