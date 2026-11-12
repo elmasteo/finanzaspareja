@@ -373,6 +373,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-11",
       "categoria": "Hogar"
+    },
+    {
+      "id": 1794519513479,
+      "autor": "Santiago",
+      "descripcion": "Accesorios Carro",
+      "monto": 50910,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-12",
+      "categoria": "Otros"
     }
   ]
 }
