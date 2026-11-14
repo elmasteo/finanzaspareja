@@ -406,6 +406,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-12",
       "categoria": "Otros"
+    },
+    {
+      "id": 1794673557063,
+      "autor": "Adriana",
+      "descripcion": "Cocacola",
+      "monto": 61300,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-14",
+      "categoria": "Otros"
     }
   ]
 }
