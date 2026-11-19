@@ -450,6 +450,17 @@
       "porcentajeAdriana": 50,
       "fecha": "2026-11-17",
       "categoria": "Otros"
+    },
+    {
+      "id": 1795053295709,
+      "autor": "Santiago",
+      "descripcion": "Arepas - Huevos",
+      "monto": 25900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-19",
+      "categoria": "Comida"
     }
   ]
 }
