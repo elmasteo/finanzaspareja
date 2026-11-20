@@ -461,6 +461,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-19",
       "categoria": "Comida"
+    },
+    {
+      "id": 1795187527302,
+      "autor": "Santiago",
+      "descripcion": "Internet",
+      "monto": 84900,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-20",
+      "categoria": "Servicios"
     }
   ]
 }
