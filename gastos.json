@@ -472,6 +472,17 @@
       "porcentajeAdriana": 53,
       "fecha": "2026-11-20",
       "categoria": "Servicios"
+    },
+    {
+      "id": 1795274911016,
+      "autor": "Adriana",
+      "descripcion": "Aromatizante",
+      "monto": 114800,
+      "tipo": "porcentaje",
+      "porcentajeSantiago": 47,
+      "porcentajeAdriana": 53,
+      "fecha": "2026-11-21",
+      "categoria": "Otros"
     }
   ]
 }
